@@ -1,0 +1,88 @@
+/* Variables de marca para que el ejemplo Bootstrap conserve los tonos de Rueda Libre. */
+:root {
+    --rueda-azul: #14213D;
+    --rueda-verde: #1E7A4F;
+    --rueda-amarillo: #F39A2B;
+    --rueda-hoja: #E5EFD9;
+    --rueda-crema: #F0EDE3;
+    --rueda-texto: #253047;
+}
+
+/* Las fuentes coinciden con la landing original; el fondo usa Crema Ciclovía. */
+body {
+    background-color: var(--rueda-crema);
+    color: var(--rueda-texto);
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Montserrat conserva la personalidad de los encabezados del proyecto. */
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Azul Noche crea continuidad visual con el menú nocturno original. */
+.navbar-rueda,
+.footer-rueda {
+    background-color: var(--rueda-azul);
+    color: #fff;
+}
+
+/* La sección principal usa Hoja Suave y respeta el espacio de la cuadrícula Bootstrap. */
+.hero-rueda {
+    background-color: var(--rueda-hoja);
+}
+
+/* Verde Ruta identifica los rótulos y acciones principales. */
+.eyebrow {
+    color: var(--rueda-verde);
+    letter-spacing: 0.08em;
+}
+
+/* Este botón adapta el componente btn de Bootstrap a la paleta de la marca. */
+.btn-rueda {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--rueda-verde);
+    --bs-btn-border-color: var(--rueda-verde);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #17613f;
+    --bs-btn-hover-border-color: #17613f;
+    --bs-btn-focus-shadow-rgb: 30, 122, 79;
+}
+
+/* El botón secundario usa el amarillo de los faroles como borde y acento. */
+.btn-outline-rueda {
+    --bs-btn-color: var(--rueda-azul);
+    --bs-btn-border-color: var(--rueda-amarillo);
+    --bs-btn-hover-color: var(--rueda-azul);
+    --bs-btn-hover-bg: var(--rueda-amarillo);
+    --bs-btn-hover-border-color: var(--rueda-amarillo);
+}
+
+/* Las tarjetas comparten radios y recorte de imágenes para conservar una composición uniforme. */
+.card-rueda {
+    border: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* object-fit mantiene la proporción y llena la misma altura en las tres tarjetas. */
+.tarjeta-imagen {
+    height: 13rem;
+    object-fit: cover;
+}
+
+/* La imagen del hero ocupa el ancho de su columna sin deformarse. */
+.hero-imagen {
+    max-height: 26rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Verde muy claro para la etiqueta secundaria de las tarjetas. */
+.badge-hoja {
+    background-color: var(--rueda-hoja);
+    color: var(--rueda-azul);
+}

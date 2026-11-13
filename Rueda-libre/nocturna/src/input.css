@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/*
+    @theme crea utilidades propias de Tailwind a partir de los colores y fuentes de Rueda Libre.
+    Así, bg-azul-noche, text-verde-ruta y font-titulos se generan sin repetir valores hexadecimales.
+*/
+@theme {
+    --color-verde-ruta: #1E7A4F;
+    --color-azul-noche: #14213D;
+    --color-amarillo-farol: #F39A2B;
+    --color-hoja-suave: #E5EFD9;
+    --color-crema-ciclovia: #F0EDE3;
+    --color-gris-medellin: #5B6470;
+    --font-titulos: "Montserrat", sans-serif;
+    --font-texto: "Open Sans", sans-serif;
+}
+
+/*
+    Las tres clases del kit encapsulan únicamente los botones reutilizables.
+    El resto del layout y las tarjetas conserva sus utilidades visibles en el HTML.
+*/
+@layer components {
+    .btn-primary {
+        /* inline-flex alinea; px/py dan relleno; rounded-xl crea cápsula suave; bg/text asignan colores; hover/sombra/foco describen estados. */
+        @apply inline-flex items-center justify-center gap-2 rounded-xl bg-verde-ruta px-5 py-3 font-bold text-white shadow-md transition hover:shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol;
+    }
+
+    .btn-secondary {
+        /* Fondo claro con texto azul oscuro; hover y foco usan colores de la marca y son visibles con teclado. */
+        @apply inline-flex items-center justify-center gap-2 rounded-xl bg-hoja-suave px-5 py-3 font-bold text-azul-noche shadow-md transition hover:bg-crema-ciclovia focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border dark:border-amarillo-farol dark:bg-azul-noche dark:text-white dark:focus-visible:ring-amarillo-farol;
+    }
+
+    .btn-outline {
+        /* Borde verde y fondo transparente; el anillo amarillo resalta al usar Tab también en modo oscuro. */
+        @apply inline-flex items-center justify-center gap-2 rounded-xl border border-verde-ruta bg-transparent px-5 py-3 font-bold text-verde-ruta transition hover:bg-hoja-suave focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-amarillo-farol dark:text-white dark:hover:bg-azul-noche dark:focus-visible:ring-amarillo-farol;
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "rueda-libre",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./src/output.css",
+    "build:css:min": "tailwindcss -i ./src/input.css -o ./src/output.min.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.4",
+    "tailwindcss": "^4.3.4"
+  }
+}

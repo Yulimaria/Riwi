@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rueda Nocturna | Prototipo</title>
+    <!-- Play CDN de Tailwind: sirve para probar rápidamente; la versión de producción usa la CLI. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-[#F7F5EF] font-sans text-[#14213D]">
+    <!-- Sección principal: reúne la campaña, el título único y el enlace de inscripción. -->
+    <main class="mx-auto flex min-h-screen max-w-6xl items-center px-6 py-16">
+        <!-- max-w-6xl limita el ancho; mx-auto centra; px-6 y py-16 agregan espacio; flex e items-center centran el contenido. -->
+        <section class="relative isolate w-full max-w-3xl overflow-hidden space-y-7 rounded-3xl bg-[#10182B] px-7 py-10 text-white shadow-2xl sm:px-12 sm:py-16">
+            <!-- w-full ocupa el espacio disponible; max-w-3xl limita el texto; space-y-7 separa los elementos verticalmente. -->
+            <!-- relative/isolate permiten superponer la imagen; overflow-hidden/rounded-3xl recortan sus bordes; px/py ajustan el espacio; fondo y texto mantienen contraste. -->
+            <img src="img/rueda-nocturna-portada.png" alt="Medellín iluminada de noche bajo un cielo azul y una ciclista junto a su bicicleta" class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
+            <!-- inset-0 ubica la imagen en todos los bordes; -z-10 la deja detrás del texto; h-full/w-full llenan el bloque; object-cover evita deformarla. -->
+            <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#0B1020]/95 via-[#0B1020]/75 to-[#0B1020]/35"></div>
+            <!-- La capa azul oscura ayuda a leer el contenido y deja visible la ilustración nocturna. -->
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-[#1E7A4F]">
+                Nuevo · Jueves a sábado
+            </p>
+            <!-- text-sm define tamaño pequeño; font-bold resalta; uppercase transforma a mayúsculas; tracking separa letras; text-[#1E7A4F] usa el verde de marca. -->
+
+            <h1 class="text-5xl font-bold leading-tight tracking-tight sm:text-7xl">
+                Rueda Nocturna
+            </h1>
+            <!-- text-5xl/sm:text-7xl escala el título; leading-tight compacta líneas; tracking-tight ajusta el espaciado entre letras. -->
+
+            <p class="max-w-2xl text-xl leading-relaxed text-[#465365] sm:text-2xl">
+                Descubre Medellín en bici cuando se encienden las luces.
+            </p>
+            <!-- max-w-2xl limita el ancho; text-xl/sm:text-2xl cambia tamaño por pantalla; leading-relaxed mejora lectura; text-[#465365] aplica un tono secundario. -->
+
+            <div class="flex flex-wrap gap-4 pt-2">
+                <!-- flex pone los datos en una fila; flex-wrap permite que bajen de línea; gap-4 los separa; pt-2 añade aire arriba. -->
+                <p class="rounded-xl bg-white px-5 py-4 text-lg font-semibold shadow-sm">
+                    <span class="text-[#1E7A4F]">3 rutas</span>
+                </p>
+                <!-- rounded-xl redondea; bg-white crea contraste; px-5/py-4 dan relleno; text-lg/font-semibold destacan el dato; shadow-sm agrega sombra suave. -->
+                <p class="rounded-xl bg-white px-5 py-4 text-lg font-semibold shadow-sm">
+                    <span class="text-[#1E7A4F]">Desde $55.000</span>
+                </p>
+                <!-- Repite las mismas utilidades para conservar consistencia entre los dos datos. -->
+            </div>
+
+            <a href="index.html#rutas" class="inline-flex rounded-full bg-[#1E7A4F] px-7 py-4 font-bold text-white shadow-md transition hover:bg-[#17623F] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F39A2B]">
+                Inscríbete
+            </a>
+            <!-- inline-flex alinea el texto; rounded-full da forma de cápsula; px-7/py-4 crean espacio; bg/text fijan colores; hover cambia el verde; focus-visible:ring hace visible el foco de teclado. -->
+        </section>
+    </main>
+</body>
+</html>

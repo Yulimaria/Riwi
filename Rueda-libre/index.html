@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/output.min.css">
+    <link rel="stylesheet" href="estilos.css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Rueda Libre </title>
+
+</head>
+
+<body class="inicio">
+    <header class="relative z-30 w-full bg-[#14213D] text-white">
+     <img
+    src="img/Ghibli-Inspired Leaf Corner Frame.png"
+    alt=""
+    aria-hidden="true"
+    class="absolute top-0 left-0 w-1/3 md:w-1/4
+       h-auto z-10 pointer-events-none"
+>
+<img
+    src="img/Ghibli-Inspired Leaf Corner Frame.png"
+    alt=""
+    aria-hidden="true"
+    class="absolute top-0 right-0 w-1/3 md:w-1/4
+       h-auto z-10 pointer-events-none"
+>
+
+        <nav
+            class="max-w-7xl mx-auto px-6 py-4 flex flex-row flex-wrap items-center justify-between gap-3 bg-[#14213D]">
+
+            <!-- logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <i class="fa-solid fa-bicycle text-5xl text-[#1E7A4F]" aria-hidden="true"> </i>
+                <!-- define el estilo solido del icono * selecciona el icono de la bicicleta* texto grande para el icono *color verde personalizado   -->
+                <span class="text-3xl md:text-4xl font-bold text-left">Rueda Libre
+                </span>
+
+            </a>
+
+            <!-- Menu -->
+            <!-- hidden/ md:flex convierte el menú en un panel móvil y en enlaces horizontales desde md. -->
+            <ul id="main-navigation" class="hidden w-full flex-col items-center gap-4 font-semibold text-lg md:flex md:w-auto md:flex-row md:gap-6 md:text-xl">
+                <li><a href="index.html" class="text-[#F39A2B]" aria-current="page">Inicio</a></li>
+                <li><a href="paginas/tarifas.html" class="hover:text-[#F39A2B] transition-colors">Tarifas</a></li>
+                <li><a href="paginas/reservas.html" class=" hover:text-[#F39A2B] transition-colors">Reservas</a></li>
+                <li><a href="#rutas" class="hover:text-[#F39A2B] transition-colors">Rutas</a></li>
+                <li><a href="nocturna/index.html" class="hover:text-[#F39A2B] transition-colors">Rueda Nocturna</a></li>
+                <!-- Enlaza el nuevo módulo desde el menú principal; hover:text cambia al ámbar y transition-colors suaviza el cambio. -->
+                <li><a href="paginas/Nosotros.html" class="hover:text-[#F39A2B] transition-colors">Acerca de
+                        nosotros</a></li>
+            </ul>
+
+            <!-- Boton de reserva-->
+            <button class="menu-toggle inline-flex items-center justify-center rounded-full border border-white/50 px-4 py-2 text-white md:hidden" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <a href="paginas/reservas.html"
+                class="bg-[#1E7A4F] hover:bg-green-700 text-white font-semibold px-5 py-3 rounded-full transition-colors">
+
+                <!-- i se utiliza para iconos-->
+                <i class="fa-regular fa-calendar-check mr-2" aria-hidden="true"></i>
+                Reservar ahora
+            </a>
+        </nav>
+    </header>
+
+    <!-- HERO--e refiere a la sección principal y de mayor impacto visual situada en la parte superior de una página-->
+
+<main>
+
+        <!-- Carrusel de cuatro promociones: cada imagen local conserva la identidad visual de Rueda Libre. -->
+        <section id="Inicio" class="promo-carousel relative min-h-90 overflow-hidden md:min-h-125" aria-label="Promociones de Rueda Libre" aria-roledescription="carrusel">
+            <article class="promo-slide promo-active relative min-h-90 items-center md:min-h-125" aria-hidden="false">
+                <img src="img/Medellín Sunset Bicycle Panorama.png" alt="Atardecer sobre las montañas de Medellín con una bicicleta" class="absolute inset-0 h-full w-full object-cover object-top">
+                <div class="absolute inset-0 bg-white/10"></div>
+                <div class="relative z-10 mx-auto w-full max-w-5xl px-6 py-16 text-center">
+                    <p class="mb-2 font-bold uppercase tracking-widest text-[#1E7A4F]">Alquiler de bicicletas en Medellín</p>
+                    <h1 class="mx-auto max-w-3xl font-bold text-4xl leading-tight text-[#14213D] md:text-6xl">Recorre Medellín<br>sobre dos ruedas</h1>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg font-semibold text-[#14213D] md:text-xl">Alquila tu bicicleta, descubre la ciudad a tu ritmo y vive experiencias inolvidables.</p>
+                    <div class="mt-8 flex flex-wrap justify-center gap-4">
+                        <a href="paginas/reservas.html" class="rounded-full bg-[#1E7A4F] px-7 py-3 font-semibold text-white transition-colors hover:bg-green-800"><i class="fa-solid fa-bicycle mr-2" aria-hidden="true"></i>Alquila ahora</a>
+                        <a href="#rutas" class="rounded-full border-2 border-[#14213D] px-7 py-3 font-semibold text-[#14213D] transition-colors hover:bg-[#14213D] hover:text-white"><i class="fa-solid fa-location-dot mr-2" aria-hidden="true"></i>Ver rutas</a>
+                    </div>
+                </div>
+            </article>
+            <article class="promo-slide absolute inset-0 min-h-[360px] items-center md:min-h-[500px]" aria-hidden="true" inert>
+                <img src="img/rueda-libre-ghibli-04-ruta-grupal-montana.png" alt="Grupo de ciclistas recorriendo una ruta de montaña" class="absolute inset-0 h-full w-full object-cover">
+                <div class="absolute inset-0 bg-white/15"></div>
+                <div class="relative z-10 mx-auto w-full max-w-5xl px-6 py-16 text-center">
+                    <p class="mb-2 font-bold uppercase tracking-widest text-[#1E7A4F]">Una bici para cada camino</p>
+                    <h2 class="mx-auto max-w-3xl font-bold text-4xl leading-tight text-[#14213D] md:text-6xl">Elige tu próxima aventura</h2>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg font-semibold text-[#14213D] md:text-xl">Tenemos modelos urbanos, de montaña y para rutas mixtas.</p>
+                    <a href="#flota" class="mt-8 inline-flex rounded-full bg-[#1E7A4F] px-7 py-3 font-semibold text-white transition-colors hover:bg-green-800">Conoce la flota</a>
+                </div>
+            </article>
+            <article class="promo-slide absolute inset-0 min-h-[360px] items-center md:min-h-[500px]" aria-hidden="true" inert>
+                <img src="img/rueda-libre-ghibli-05-amanecer-montanas.png" alt="Amanecer sobre las montañas y caminos de Medellín" class="absolute inset-0 h-full w-full object-cover">
+                <div class="absolute inset-0 bg-white/15"></div>
+                <div class="relative z-10 mx-auto w-full max-w-5xl px-6 py-16 text-center">
+                    <p class="mb-2 font-bold uppercase tracking-widest text-[#1E7A4F]">Pedalea con libertad</p>
+                    <h2 class="mx-auto max-w-3xl font-bold text-4xl leading-tight text-[#14213D] md:text-6xl">La ciudad se disfruta al aire libre</h2>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg font-semibold text-[#14213D] md:text-xl">Encuentra una ruta nueva y comparte el camino.</p>
+                    <a href="#rutas" class="mt-8 inline-flex rounded-full border-2 border-[#14213D] px-7 py-3 font-semibold text-[#14213D] transition-colors hover:bg-[#14213D] hover:text-white">Explora las rutas</a>
+                </div>
+            </article>
+            <article class="promo-slide absolute inset-0 min-h-[360px] items-center md:min-h-[500px]" aria-hidden="true" inert>
+                <!-- La cuarta promoción presenta la campaña nocturna dentro del mismo carrusel. -->
+                <img src="nocturna/img/rueda-nocturna-portada.png" alt="Ciclista contempla Medellín iluminada durante la noche" class="absolute inset-0 h-full w-full object-cover">
+                <!-- La ruta desde index.html entra a la carpeta nocturna y carga la ilustración local. -->
+                <div class="absolute inset-0 bg-[#14213D]/60"></div>
+                <!-- Una capa azul oscura sostiene el contraste del texto blanco. -->
+                <div class="relative z-10 mx-auto w-full max-w-5xl px-6 py-16 text-center text-white">
+                    <!-- El mismo contenedor centrado y espaciamiento mantienen continuidad con las otras slides. -->
+                    <p class="mb-2 font-bold uppercase tracking-widest text-[#F39A2B]">Nueva experiencia</p>
+                    <!-- El ámbar es el acento compartido de la identidad visual. -->
+                    <h2 class="mx-auto max-w-3xl font-bold text-4xl leading-tight md:text-6xl">Rueda Nocturna</h2>
+                    <!-- La campaña recibe un título de jerarquía equivalente a las otras promociones. -->
+                    <p class="mx-auto mt-6 max-w-2xl text-lg font-semibold md:text-xl">Descubre Medellín en bicicleta cuando se encienden las luces.</p>
+                    <!-- La descripción anuncia el contenido de la landing nocturna. -->
+                    <a href="nocturna/index.html" class="mt-8 inline-flex rounded-full bg-[#1E7A4F] px-7 py-3 font-semibold text-white transition-colors hover:bg-green-800">Conoce Rueda Nocturna</a>
+                    <!-- El enlace relativo desde la raíz abre la landing publicada junto al sitio. -->
+                </div>
+            </article>
+            <button class="carousel-control carousel-prev absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#14213D]/75 p-3 text-white" type="button" aria-label="Mostrar promoción anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <button class="carousel-control carousel-next absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#14213D]/75 p-3 text-white" type="button" aria-label="Mostrar promoción siguiente"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+            <div class="carousel-dots absolute bottom-4 left-0 right-0 z-20 flex justify-center gap-3" aria-label="Seleccionar promoción">
+                <button class="carousel-dot is-current h-3 w-3 rounded-full bg-white" type="button" aria-label="Mostrar promoción 1" aria-current="true"></button>
+                <button class="carousel-dot h-3 w-3 rounded-full bg-white/70" type="button" aria-label="Mostrar promoción 2"></button>
+                <button class="carousel-dot h-3 w-3 rounded-full bg-white/70" type="button" aria-label="Mostrar promoción 3"></button>
+                <button class="carousel-dot h-3 w-3 rounded-full bg-white/70" type="button" aria-label="Mostrar promoción 4"></button>
+                <!-- El cuarto indicador corresponde al nuevo slide y lo activa con el mismo script. -->
+            </div>
+        </section>
+ <!-- =========================================
+             SECCIÓN 2: BENEFICIOS
+        ========================================== -->
+
+        <section class="max-w-7xl mx-auto px-4 py-5">
+
+            <!--
+                grid: organiza los beneficios mediante CSS Grid.
+                grid-cols-2: muestra dos columnas en dispositivos pequeños.
+                md:grid-cols-4: cambia a cuatro columnas en pantallas medianas.
+                gap-4: establece separación entre los elementos.
+                -mt-4: desplaza la sección ligeramente hacia arriba. -->
+
+                   <!-- Contenedor de los cuatro beneficios -->
+
+            <div class="beneficios-grid grid grid-cols-1 gap-4 bg-[#E5EFD9] p-4 sm:grid-cols-2 lg:grid-cols-4">
+
+                <!-- Beneficio 1 -->
+                <div class="flex items-center gap-3">
+                    <!-- Icono de hoja -->
+                    <i class="fa-solid fa-leaf text-2xl text-[#1E7A4F]" aria-hidden="true"></i>
+                    <!-- Texto del beneficio -->
+                    <div>
+                        <h2 class="font-bold text-sm">Movilidad sostenible</h2>
+                        <p class="text-xs text-gray-600">Cuida la ciudad y el planeta.</p>
+                    </div>
+                </div>
+
+                <!-- Beneficio 2 -->
+                <div class="flex items-center gap-3">
+                    <!-- Icono de montaña y sol -->
+                    <i class="fa-solid fa-mountain-sun text-2xl text-[#1E7A4F]" aria-hidden="true"></i>
+
+                    <div>
+                        <h2 class="font-bold text-sm">Explora la ciudad</h2>
+                        <p class="text-xs text-gray-600">Rutas urbanas y naturales.</p>
+                    </div>
+
+                </div>
+
+                <!-- Beneficio 3 -->
+                <div class="flex items-center gap-3">
+
+                    <i class="fa-solid fa-people-group text-2xl text-[#1E7A4F]" aria-hidden="true"></i>
+
+                    <div>
+                        <h2 class="font-bold text-sm">Para todos</h2>
+                        <p class="text-xs text-gray-600">Planes para compartir.</p>
+                    </div>
+
+                </div>
+
+                <!-- Beneficio 4 -->
+                <div class="flex items-center gap-3">
+                     <!-- Icono de calendario -->
+                    <i class="fa-regular fa-calendar-check text-2xl text-[#1E7A4F]" aria-hidden="true"></i>
+
+                    <div>
+                        <h2 class="font-bold text-sm">Reserva fácil</h2>
+                        <p class="text-xs text-gray-600">En pocos pasos y en línea.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+       
+ <!-- =========================================
+     SECCIÓN 3: QUIÉNES SOMOS
+ ========================================== -->
+
+ <section id="nosotros"
+    class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-9 items-center">
+
+    <!--
+        max-w-7xl: establece un ancho máximo para el contenido.
+        mx-auto: centra horizontalmente toda la sección.
+        px-6: agrega espacio interno a los lados.
+        py-10: agrega espacio interno arriba y abajo.
+        grid: activa CSS Grid para organizar los elementos.
+        grid-cols-1: muestra una sola columna en pantallas pequeñas.
+        md:grid-cols-2: muestra dos columnas en pantallas medianas y grandes.
+        gap-9: establece una separación entre la imagen y el texto.
+        items-center: alinea verticalmente los dos elementos al centro.
+    -->
+
+    <!-- Imagen de presentación -->
+    <div>
+
+        <img
+            src="img/quienes somos.png"
+            alt="Ilustración de Medellín con una bicicleta y sus paisajes"
+            class=" h-56 md:h-64 object-cover rounded-2xl shadow-md"
+        >
+
+        <!--
+            w-full: hace que la imagen ocupe todo el ancho disponible
+            dentro de su contenedor.
+
+            h-56: establece una altura de 14rem en pantallas pequeñas.
+
+            md:h-64: aumenta la altura a 16rem en pantallas medianas
+            y grandes.
+
+            object-cover: hace que la imagen cubra todo el espacio
+            sin deformarse. Si las proporciones no coinciden,
+            recorta una parte de la imagen.
+
+            rounded-2xl: redondea las cuatro esquinas de la imagen.
+
+            shadow-md: agrega una sombra suave para darle profundidad.
+        -->
+
+    </div>
+
+
+    <!-- Descripción de la empresa -->
+    <div>
+
+        <!-- Título de la sección -->
+        <h2 class="text-2xl md:text-3xl font-bold text-[#14213D] text-right">
+
+            ¿Quiénes somos?
+
+        </h2>
+
+        <!-- Línea decorativa debajo del título -->
+        <div class="w-16 h-1 bg-[#1E7A4F] rounded-full mt-3"></div>
+
+        <!--
+            w-16: establece un ancho de 4rem para la línea.
+            h-1: establece una altura pequeña de 0.25rem.
+            bg-[#1E7A4F]: aplica nuestro color verde personalizado.
+            rounded-full: redondea completamente los extremos.
+            mt-3: agrega un margen superior para separar la línea del título.
+        -->
+
+        <!-- Descripción de Rueda Libre -->
+        <p class="mt-4 text-sm md:text-base text-right leading-relaxed text-gray-700">
+
+            <!--
+                mt-4: agrega separación entre la línea y el párrafo.
+                text-sm: establece un tamaño de letra pequeño.
+                md:text-base: aumenta el tamaño de letra en pantallas medianas.
+                text-left: alinea el texto hacia la izquierda.
+                leading-relaxed: aumenta el espacio entre las líneas
+                para facilitar la lectura.
+                text-gray-700: aplica un tono gris oscuro al texto.
+            -->
+
+            <strong>Rueda Libre</strong> es un servicio de alquiler de
+            bicicletas en Medellín que promueve la movilidad sostenible,
+            el bienestar y el turismo responsable.
+
+            Te invitamos a conocer la ciudad de una manera diferente:
+            más libre, saludable y cercana a su esencia.
+
+        </p>
+
+        <!-- Botón para conocer más -->
+        <a href="paginas/Nosotros.html"
+            class="inline-flex items-center gap-3 mt-5 border border-[#1E7A4F] text-[#14213D] hover:bg-[#1E7A4F] hover:text-white px-5 py-2 rounded-full font-semibold transition-colors">
+
+            Conoce más
+
+            <i class="fa-solid fa-arrow-right text-[#1E7A4F]" aria-hidden="true"></i>
+
+        </a>
+
+        <!--
+            inline-flex: permite organizar el texto y el icono en una misma línea.
+            items-center: centra verticalmente ambos elementos.
+            gap-3: establece separación entre el texto y el icono.
+            mt-5: agrega margen superior.
+            border: dibuja un borde alrededor del botón.
+            border-[#1E7A4F]: establece el color verde del borde.
+            hover:bg-[#1E7A4F]: cambia el fondo a verde al pasar el cursor.
+            hover:text-white: cambia el texto a blanco al pasar el cursor.
+            px-5: agrega espacio horizontal interno.
+            py-2: agrega espacio vertical interno.
+            rounded-full: convierte el botón en una cápsula.
+            font-semibold: establece una letra seminegrita.
+            transition-colors: suaviza la transición de los colores.
+        -->
+
+    </div>
+
+ </section>  
+        <!-- =========================================
+             SECCIÓN 4: NUESTROS SERVICIOS
+        ========================================== -->
+
+        <section id="servicios" class="bg-[#F0EDE3] px-6 py-12">
+
+            <div class="max-w-7xl mx-auto">
+
+                <h2 class="text-2xl md:text-3xl font-bold">
+                    Nuestros servicios
+                </h2>
+
+                <!--
+                    grid: crea una cuadrícula para las tarjetas.
+                    grid-cols-1: una columna en dispositivos pequeños.
+                    md:grid-cols-3: tres columnas en pantallas medianas.
+                    gap-5: separación entre tarjetas.
+                -->
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-7">
+
+                    <!-- Servicio 1 -->
+                    <article class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+
+                        <div class="w-14 h-14 shrink-0 flex items-center justify-center rounded-full bg-[#E5EFD9] text-[#1E7A4F] text-2xl">
+
+                            <i class="fa-solid fa-bicycle" aria-hidden="true"></i>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold">Alquiler de bicicletas</h3>
+
+                            <p class="text-sm text-gray-600 mt-1">
+                                Bicicletas cómodas y seguras para tus recorridos.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Servicio 2 -->
+                    <article class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+
+                        <div class="w-14 h-14 shrink-0 flex items-center justify-center rounded-full bg-[#FCE8D2] text-[#D97706] text-2xl">
+
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold">Rutas guiadas</h3>
+
+                            <p class="text-sm text-gray-600 mt-1">
+                                Conoce los lugares más emblemáticos de Medellín.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Servicio 3 -->
+                    <article class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+
+                        <div class="w-14 h-14 shrink-0 flex items-center justify-center rounded-full bg-[#EAE3F5] text-[#66508D] text-2xl">
+
+                            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold">Planes para grupos</h3>
+
+                            <p class="text-sm text-gray-600 mt-1">
+                                Vive la experiencia con amigos, familia o tu equipo.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECCIÓN NUESTRA FLOTA -->
+        <section id="flota" class="max-w-7xl mx-auto px-6 py-14" aria-labelledby="titulo-flota">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-7">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-widest text-[#1E7A4F]">Elige tu bicicleta</p>
+                    <h2 id="titulo-flota" class="text-2xl md:text-3xl font-bold">Nuestra flota</h2>
+                </div>
+                <p class="max-w-xl text-sm text-gray-600">Modelos cómodos para disfrutar la ciudad, sus rutas y sus montañas.</p>
+            </div>
+            <!-- auto-fit y minmax crean columnas flexibles según el espacio disponible. -->
+            <div class="flota-grid grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <article class="tarjeta-flota"><img src="img/rueda-libre-ghibli-02-ciclovia-verde.png" alt="Bicicleta urbana clásica" loading="lazy"><div class="contenido-flota"><h3>Urbana Clásica</h3><p>Cómoda y liviana para las ciclorrutas.</p><p class="precio-flota">$10.000 <span>/ hora</span></p><a href="paginas/reservas.html">Reservar</a></div></article>
+                <article class="tarjeta-flota"><img src="img/rueda-libre-ghibli-02-ciclovia-verde.png" alt="Bicicleta urbana plegable" loading="lazy"><div class="contenido-flota"><h3>Urbana Plegable</h3><p>Se dobla en segundos; ideal para combinar con el metro.</p><p class="precio-flota">$12.000 <span>/ hora</span></p><a href="paginas/reservas.html">Reservar</a></div></article>
+                <article class="tarjeta-flota"><img src="img/rueda-libre-ghibli-04-ruta-grupal-montana.png" alt="Bicicleta de montaña Trail" loading="lazy"><div class="contenido-flota"><h3>Montaña Trail</h3><p>Suspensión delantera y 21 cambios para las subidas.</p><p class="precio-flota">$15.000 <span>/ hora</span></p><a href="paginas/reservas.html">Reservar</a></div></article>
+                <article class="tarjeta-flota"><img src="img/rueda-libre-ghibli-05-amanecer-montanas.png" alt="Bicicleta para rutas Gravel" loading="lazy"><div class="contenido-flota"><h3>Gravel Aventura</h3><p>Para rutas mixtas de asfalto y destapado.</p><p class="precio-flota">$18.000 <span>/ hora</span></p><a href="paginas/reservas.html">Reservar</a></div></article>
+                <article class="tarjeta-flota"><img src="img/Medellín Sunset Bicycle Panorama.png" alt="Bicicleta eléctrica para la ciudad" loading="lazy"><div class="contenido-flota"><h3>Eléctrica Urbana</h3><p>Asistencia eléctrica con 45 km de autonomía.</p><p class="precio-flota">$25.000 <span>/ hora</span></p><a href="paginas/reservas.html">Reservar</a></div></article>
+                <article class="tarjeta-flota"><img src="img/rueda-libre-ghibli-02-ciclovia-verde.png" alt="Bicicleta infantil" loading="lazy"><div class="contenido-flota"><h3>Infantil</h3><p>Para niños de 6 a 10 años.</p><p class="precio-flota">$8.000 <span>/ hora</span></p><a href="paginas/reservas.html">Reservar</a></div></article>
+                <article class="tarjeta-flota"><img src="img/rueda-libre-ghibli-04-ruta-grupal-montana.png" alt="Bicicleta tándem para dos personas" loading="lazy"><div class="contenido-flota"><h3>Tándem</h3><p>Para dos personas; perfecta para pasear en pareja.</p><p class="precio-flota">$20.000 <span>/ hora</span></p><a href="paginas/reservas.html">Reservar</a></div></article>
+            </div>
+        </section>
+        <!-- =========================================
+             SECCIÓN 5: RUTAS RECOMENDADAS
+        ========================================== -->
+
+        <section id="rutas" class="max-w-7xl mx-auto px-6 py-14">
+
+            <!-- Encabezado y enlace para consultar todas las rutas -->
+            <div class="flex flex-wrap items-center justify-between gap-4">
+
+                <div>
+
+                    <h2 class="text-2xl md:text-3xl font-bold">
+                        Rutas recomendadas
+                    </h2>
+
+                    <p class="text-sm text-gray-600 mt-2">
+                        Descubre algunas de nuestras rutas más especiales.
+                    </p>
+
+                </div>
+
+                <a href="paginas/tarifas.html"
+                    class="text-sm font-semibold text-[#1E7A4F] hover:text-[#F39A2B] transition-colors">
+
+                    Ver todas las rutas
+                    <i class="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i>
+
+                </a>
+
+            </div>
+
+            <!-- Cuadrícula de tarjetas de rutas -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-7">
+
+                <!-- Ruta 1: Ciclovía del Río -->
+                <article class="relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+
+                    <img
+                        src="img/rueda-libre-ghibli-02-ciclovia-verde.png"
+                        alt="Ciclistas recorriendo una ruta rodeada de naturaleza"
+                        class="w-full h-44 object-cover"
+                    >
+                    <div class="p-4">
+
+                        <span class="inline-block bg-[#E5EFD9] text-[#1E7A4F] text-xs font-semibold px-3 py-1 rounded-full">
+                            Urbana
+                        </span>
+
+                        <h3 class="font-bold text-lg mt-2">
+                            Ciclovía del Río
+                        </h3>
+
+                        <div class="flex items-center gap-4 text-xs text-gray-600 mt-3">
+
+                            <span>
+                                <i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>
+                                1 h 30 min
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-signal mr-1" aria-hidden="true"></i>
+                                Fácil
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a href="paginas/tarifas.html"
+                        class="absolute bottom-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-[#E5EFD9] text-[#1E7A4F] hover:bg-[#1E7A4F] hover:text-white transition-colors"
+                        aria-label="Consultar Ciclovía del Río">
+
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                    </a>
+
+                </article>
+
+                <!-- Ruta 2: Mirador de Las Palmas -->
+                <article class="relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+
+                    <img
+                        src="img/rueda-libre-ghibli-04-ruta-grupal-montana.png"
+                        alt="Paisaje de montaña en Medellín"
+                        class="w-full h-44 object-cover"
+                    >
+                    <div class="p-4">
+
+                        <span class="inline-block bg-[#E5EFD9] text-[#1E7A4F] text-xs font-semibold px-3 py-1 rounded-full">
+                            Panorámica
+                        </span>
+
+                        <h3 class="font-bold text-lg mt-2">
+                            Mirador de Las Palmas
+                        </h3>
+
+                        <div class="flex items-center gap-4 text-xs text-gray-600 mt-3">
+
+                            <span>
+                                <i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>
+                                2 h 30 min
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-signal mr-1" aria-hidden="true"></i>
+                                Intermedia
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a href="paginas/tarifas.html"
+                        class="absolute bottom-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-[#E5EFD9] text-[#1E7A4F] hover:bg-[#1E7A4F] hover:text-white transition-colors"
+                        aria-label="Consultar Mirador de Las Palmas">
+
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <!-- Ruta 3: Atardecer en el Alto -->
+                <article class="relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+
+                    <img
+                        src="img/rueda-libre-ghibli-05-amanecer-montanas.png"
+                        alt="Atardecer sobre las montañas de Medellín"
+                        class="w-full h-44 object-cover"
+                    >
+                    <div class="p-4">
+
+                        <span class="inline-block bg-[#E5EFD9] text-[#1E7A4F] text-xs font-semibold px-3 py-1 rounded-full">
+                            Natural
+                        </span>
+
+                        <h3 class="font-bold text-lg mt-2">
+                            Atardecer en el Alto
+                        </h3>
+
+                        <div class="flex items-center gap-4 text-xs text-gray-600 mt-3">
+
+                            <span>
+                                <i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>
+                                2 h
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-signal mr-1" aria-hidden="true"></i>
+                                Intermedia
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a href="paginas/tarifas.html"
+                        class="absolute bottom-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-[#E5EFD9] text-[#1E7A4F] hover:bg-[#1E7A4F] hover:text-white transition-colors"
+                        aria-label="Consultar Atardecer en el Alto">
+
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SECCIÓN 6: BANNER FINAL
+        ========================================== -->
+
+        <section class="px-6 py-8">
+
+            <div class="relative max-w-7xl mx-auto min-h-64 flex flex-col md:flex-row items-center justify-between gap-6 rounded-2xl overflow-hidden bg-[#E5EFD9] p-8 md:px-16">
+
+                <!-- Imagen decorativa de fondo -->
+                <img
+                    src="img/Medellín Sunset Bicycle Panorama.png"
+                    alt=""                    aria-hidden="true"
+                    class="absolute inset-0 w-full h-full object-cover opacity-20"
+                >
+
+                <!-- Contenido del banner -->
+                <div class="relative z-10 text-center md:text-left">
+
+                    <h2 class="font-bold text-4xl md:text-5xl text-[#14213D]">
+                        ¡Es hora de pedalear!
+                    </h2>
+
+                    <p class="mt-3 max-w-lg text-sm md:text-base font-semibold">
+                        Elige tu bicicleta, vive en familia y recorre Medellín
+                        de una forma más libre y sostenible.
+                    </p>
+
+                </div>
+
+                <!-- Botón de reserva -->
+                <a href="paginas/reservas.html"
+                    class="relative z-10 bg-[#1E7A4F] hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-colors whitespace-nowrap">
+
+                    <i class="fa-regular fa-calendar-check mr-2" aria-hidden="true"></i>
+                    Reserva tu bici ahora
+
+                </a>
+
+            </div>
+
+        </section>
+
+ </main>
+
+
+    <!-- =========================================
+         FOOTER: PIE DE PÁGINA
+    ========================================== -->
+
+    <footer class="relative overflow-hidden bg-[#14213D] text-white">
+
+        <!-- Contenido organizado en cuatro columnas -->
+        <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6 py-10">
+
+            <!-- Columna 1: Marca -->
+            <div>
+
+                <a href="index.html" class="flex items-center gap-2">
+
+                    <i class="fa-solid fa-bicycle text-2xl text-[#1E7A4F]" aria-hidden="true"></i>
+
+                    <span class="font-bold text-xl">
+                        Rueda Libre
+                    </span>
+
+                </a>
+
+                <p class="text-xs text-gray-300 mt-3">
+                    Alquiler de bicicletas en Medellín.
+                </p>
+
+            </div>
+
+
+            <!-- Columna 2: Enlaces -->
+            <div>
+
+                <h3 class="font-bold mb-3">
+                    Enlaces
+                </h3>
+
+                <ul class="space-y-2 text-sm text-gray-300">
+
+                    <li><a href="index.html" class="hover:text-[#F39A2B]">Inicio</a></li>
+
+                    <li><a href="paginas/tarifas.html" class="hover:text-[#F39A2B]">Tarifas</a></li>
+
+                    <li><a href="paginas/reservas.html" class="hover:text-[#F39A2B]">Reservas</a></li>
+
+                    <li><a href="#rutas" class="hover:text-[#F39A2B]">Rutas</a></li>
+                    <li><a href="nocturna/index.html" class="hover:text-[#F39A2B]">Rueda Nocturna</a></li>
+
+                    <li><a href="#nosotros" class="hover:text-[#F39A2B]">Nosotros</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Columna 3: Contacto -->
+            <div>
+
+                <h3 class="font-bold mb-3">
+                    Contáctanos
+                </h3>
+
+                <address class="not-italic space-y-2 text-sm text-gray-300">
+
+                    <p>
+                        <i class="fa-regular fa-envelope mr-2" aria-hidden="true"></i>
+                        <a href="mailto:soporte@ruedalibre.com">
+                            soporte@ruedalibre.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-phone mr-2" aria-hidden="true"></i>
+                        <a href="tel:+573000000000">
+                            +57 300 123 4567
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot mr-2" aria-hidden="true"></i>
+                        Medellín, Colombia
+                    </p>
+
+                </address>
+
+            </div>
+
+
+            <!-- Columna 4: Redes sociales -->
+            <div>
+
+                <h3 class="font-bold mb-3">
+                    Síguenos
+                </h3>
+
+                <nav aria-label="Redes sociales">
+
+                    <ul class="flex gap-4 text-xl">
+
+                        <li>
+                            <a href="https://instagram.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram">
+
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://facebook.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook">
+
+                                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub">
+
+                                <i class="fa-brands fa-github" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+
+        <!-- Derechos de autor -->
+        <div class="relative z-10 border-t border-white/20 px-6 py-4 text-center text-xs text-gray-300">
+
+            <p>
+                &copy; 2026 Rueda Libre. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+        href="https://wa.me/573000000000"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contáctanos por WhatsApp"
+        class="fixed bottom-5 right-5 z-50 flex items-center gap-2 bg-[#1E7A4F] hover:bg-green-700 text-white px-4 py-3 rounded-full shadow-lg transition-colors">
+
+        <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
+        <span>WhatsApp</span>
+
+    </a>
+
+    <!-- Este archivo activa el menú móvil y los controles del carrusel. -->
+    <script src="js/site.js" defer></script>
+</body>
+
+</html>
+
+
+
+
+

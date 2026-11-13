@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Kit de componentes | Rueda Nocturna</title>
+</head>
+<body class="bg-crema-ciclovia font-texto text-azul-noche dark:bg-azul-noche dark:text-white">
+    <!-- Colores y tipografías propios mantienen el modo claro; dark: sigue la preferencia del sistema. -->
+    <header class="border-b border-gris-medellin/20 bg-hoja-suave dark:border-white/20 dark:bg-azul-noche">
+        <!-- El borde y los fondos usan la paleta Rueda Libre en ambos modos. -->
+        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
+            <!-- mx-auto/max-w-6xl centran y limitan; flex/justify-between alinean; gap y px/py dan espacio. -->
+            <a href="index.html" class="font-titulos text-xl font-bold tracking-wide text-azul-noche dark:text-white">Rueda Libre</a>
+            <!-- Montserrat/tamaño/negrita destacan; los colores cambian para mantener contraste. -->
+            <a href="index.html#rutas" class="font-semibold text-verde-ruta underline transition-colors hover:text-azul-noche focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:text-hoja-suave dark:hover:text-amarillo-farol">Ver rutas</a>
+            <!-- Enlace al módulo; Verde Ruta funciona sobre crema y Hoja Suave sobre Azul Noche. -->
+        </nav>
+    </header>
+
+    <main class="mx-auto max-w-6xl space-y-12 px-6 py-12">
+        <!-- max-w-6xl/ mx-auto centran; space-y-12 separa secciones; px-6/py-12 dan margen interior. -->
+        <section>
+            <p class="text-sm font-bold uppercase tracking-[0.16em] text-verde-ruta dark:text-amarillo-farol">Rueda Nocturna</p>
+            <!-- El acento verde del modo claro cambia a amarillo sobre el fondo oscuro. -->
+            <h1 class="mt-2 font-titulos text-4xl font-bold">Kit de componentes</h1>
+            <!-- Único h1 de la página; mt-2 separa y Montserrat/text-4xl crea jerarquía. -->
+            <p class="mt-3 max-w-2xl leading-relaxed text-gris-medellin dark:text-hoja-suave">Botones, tarjeta, avisos y campos comparten las mismas reglas visuales.</p>
+            <!-- max-w-2xl limita; leading-relaxed facilita lectura; gris/hoja suave son textos secundarios con contraste. -->
+        </section>
+
+        <section class="space-y-5" aria-labelledby="botones-title">
+            <!-- space-y-5 ordena el contenido; aria-labelledby da nombre accesible a la sección. -->
+            <h2 id="botones-title" class="font-titulos text-2xl font-bold">Botones</h2>
+            <!-- El subtítulo repite fuente y jerarquía de la landing. -->
+            <div class="flex flex-wrap gap-4">
+                <!-- flex/flex-wrap adaptan el grupo; gap-4 separa las variantes. -->
+                <a href="index.html#rutas" class="btn-primary">Principal</a>
+                <!-- btn-primary reutiliza el botón principal definido en la capa components de input.css. -->
+                <a href="index.html#rutas" class="btn-secondary">Secundario</a>
+                <!-- btn-secondary reutiliza fondo claro en modo claro y superficie Azul Noche en dark. -->
+                <a href="index.html#rutas" class="btn-outline">Contorno</a>
+                <!-- btn-outline conserva el mismo radio, relleno, estados hover y anillo de foco del kit. -->
+            </div>
+        </section>
+
+        <section class="space-y-5" aria-labelledby="card-title">
+            <!-- space-y-5 conserva la separación común y aria-labelledby vincula el título. -->
+            <h2 id="card-title" class="font-titulos text-2xl font-bold">Tarjeta de ruta</h2>
+            <!-- Font family and size use the custom theme. -->
+            <article class="flex max-w-2xl flex-col overflow-hidden rounded-2xl border border-gris-medellin/20 bg-white text-azul-noche shadow-md transition-shadow hover:border-verde-ruta hover:shadow-xl dark:border-white/20 dark:bg-azul-noche dark:text-white dark:hover:border-amarillo-farol">
+                <!-- max-w-2xl limita; flex-col ordena; rounded/border/shadow componen la tarjeta; dark adapta superficie, texto y borde. -->
+                <img src="img/luces-del-centro-noche.png" alt="Dos ciclistas avanzan por una ruta nocturna iluminada en Medellín" class="h-52 w-full object-cover">
+                <!-- h-52/w-full mantienen el formato; object-cover recorta sin deformar. -->
+                <div class="flex flex-col gap-5 p-6">
+                    <!-- flex-col/gap ordenan; p-6 aplica la regla de relleno interno de las cards. -->
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <!-- flex/flex-wrap agrupan; items-center alinea; justify-between separa nombre y nivel. -->
+                        <h3 class="font-titulos text-xl font-bold">Luces del Centro</h3>
+                        <!-- Nombre de ruta con Montserrat y negrita. -->
+                        <span class="rounded-full bg-hoja-suave px-3 py-1 text-sm font-bold text-azul-noche">Fácil</span>
+                        <!-- rounded-full forma la etiqueta; el nivel se nombra además de distinguirse con color. -->
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                        <!-- Los datos se apilan en móvil y pasan a tres columnas desde sm. -->
+                        <p><span class="block text-sm text-gris-medellin dark:text-hoja-suave">Distancia</span><strong>10 km</strong></p>
+                        <!-- block separa rótulo; text-sm/tono secundario lo jerarquizan; strong destaca el valor. -->
+                        <p><span class="block text-sm text-gris-medellin dark:text-hoja-suave">Duración</span><strong>2 h</strong></p>
+                        <p><span class="block text-sm text-gris-medellin dark:text-hoja-suave">Encuentro</span><strong>Sede Rueda Libre</strong></p>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-t border-gris-medellin/20 pt-4 dark:border-white/20">
+                        <!-- flex/flex-wrap adaptan; justify-between separa; gap evita choques; el borde y pt-4 cierran la card. -->
+                        <p class="font-titulos text-2xl font-bold text-verde-ruta dark:text-hoja-suave">$55.000</p>
+                        <!-- Verde Ruta funciona sobre blanco; Hoja Suave mantiene contraste en fondo oscuro. -->
+                        <a href="index.html#inscripcion" class="btn-primary">Inscríbete</a>
+                        <!-- Reutiliza el botón del kit, incluida su respuesta al teclado. -->
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="space-y-5" aria-labelledby="alertas-title">
+            <!-- space-y-5 mantiene distancia entre el título y los mensajes. -->
+            <h2 id="alertas-title" class="font-titulos text-2xl font-bold">Alertas</h2>
+            <!-- Título de sección con fuente y tamaño de la marca. -->
+            <div class="space-y-4">
+                <!-- space-y-4 separa uniformemente los tres avisos. -->
+                <div class="rounded-xl border-l-4 border-verde-ruta bg-hoja-suave p-5 text-azul-noche dark:border-hoja-suave dark:bg-azul-noche dark:text-white">
+                    <!-- rounded-xl usa radio del kit; border-l-4 distingue; verde/hoja/azul comunican información con texto legible. -->
+                    <h3 class="font-bold">Información</h3>
+                    <!-- font-bold destaca el título del mensaje. -->
+                    <p class="mt-1 text-sm leading-relaxed">Llega 15 minutos antes para revisar luces y equipo.</p>
+                    <!-- mt-1/text-sm/leading-relaxed separan y facilitan lectura. -->
+                </div>
+                <div class="rounded-xl border-l-4 border-verde-ruta bg-hoja-suave p-5 text-azul-noche dark:border-hoja-suave dark:bg-azul-noche dark:text-white" role="status" aria-live="polite">
+                    <!-- El mismo fondo y borde indican éxito; role=status/aria-live anuncian sin interrumpir. -->
+                    <h3 class="font-bold">Inscripción confirmada</h3>
+                    <p class="mt-1 text-sm leading-relaxed">Tu cupo para la rodada está listo.</p>
+                </div>
+                <div class="rounded-xl border-l-4 border-amarillo-farol bg-amarillo-farol p-5 text-azul-noche">
+                    <!-- Amarillo Farol con texto Azul Noche comunica atención y conserva contraste. -->
+                    <h3 class="font-bold">Atención</h3>
+                    <p class="mt-1 text-sm leading-relaxed">La salida puede cambiar si el clima no permite pedalear con seguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-5" aria-labelledby="campos-title">
+            <!-- Los campos siguen separados por la misma escala vertical del kit. -->
+            <h2 id="campos-title" class="font-titulos text-2xl font-bold">Campos de formulario</h2>
+            <!-- Mantiene Montserrat y jerarquía de título. -->
+            <form class="grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2" action="#" method="get">
+                <!-- grid-cols-1 apila en móvil; sm:grid-cols-2 crea dos columnas; gap-6 separa; max-w-2xl limita el formulario. -->
+                <div class="space-y-2">
+                    <!-- space-y-2 separa etiqueta, campo y texto auxiliar. -->
+                    <label for="correo" class="block font-semibold">Correo electrónico</label>
+                    <!-- for conecta la etiqueta al id correo; block la deja en una línea propia. -->
+                    <input id="correo" name="correo" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" aria-describedby="ayuda-correo" class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche placeholder:text-gris-medellin focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:placeholder:text-hoja-suave dark:focus-visible:ring-amarillo-farol">
+                    <!-- w-full llena; rounded-xl/border dan forma; px/py rellenan; paleta define contraste; focus-visible:ring se ve al navegar con Tab. -->
+                    <p id="ayuda-correo" class="text-sm leading-relaxed text-gris-medellin dark:text-hoja-suave">Usaremos este correo para enviarte los detalles de salida.</p>
+                    <!-- aria-describedby vincula la ayuda al campo; el tono secundario se aclara en dark. -->
+                </div>
+                <div class="space-y-2">
+                    <!-- La misma separación preserva consistencia con el primer campo. -->
+                    <label for="celular" class="block font-semibold">Celular</label>
+                    <!-- for enlaza la etiqueta con el control celular. -->
+                    <input id="celular" name="celular" type="tel" autocomplete="tel" inputmode="tel" placeholder="300 123 4567" aria-describedby="ayuda-celular" class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche placeholder:text-gris-medellin focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:placeholder:text-hoja-suave dark:focus-visible:ring-amarillo-farol">
+                    <!-- type tel/inputmode ofrecen teclado telefónico; ancho, borde, relleno, colores y foco repiten el campo de correo. -->
+                    <p id="ayuda-celular" class="text-sm leading-relaxed text-gris-medellin dark:text-hoja-suave">Incluye el indicativo si tu número es de otro país.</p>
+                    <!-- El id se enlaza al input; tamaño y contraste siguen la misma regla del kit. -->
+                </div>
+            </form>
+        </section>
+
+        <footer class="border-t border-gris-medellin/20 pt-6 text-sm text-gris-medellin dark:border-white/20 dark:text-hoja-suave">
+            <!-- Borde, espacio y texto secundario usan valores propios y variantes dark. -->
+            Rueda Libre · Kit Tailwind para Rueda Nocturna.
+        </footer>
+    </main>
+</body>
+</html>
+

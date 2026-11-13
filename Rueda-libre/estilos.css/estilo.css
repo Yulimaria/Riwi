@@ -1,0 +1,60 @@
+/* Variables de marca: verde para la acción principal, naranja para acentos y azul para navegación. */
+:root {
+    --verde-ruta: #1E7A4F;
+    --verde-ruta-rgb: 30, 122, 79;
+    --naranja-pedal: #F39A2B;
+    --amarillo-farol: #F39A2B;
+    --azul-noche: #14213D;
+    --crema: #F0EDE3;
+    --hoja-suave: #E5EFD9;
+    --gris-asfalto: #5B6470;
+    --fuente-titulos: "Montserrat", Arial, sans-serif;
+    --fuente-texto: "Open Sans", Arial, sans-serif;
+    --radio-marca: 1rem;
+}
+
+/* La tipografía base complementa las clases Tailwind que controlan la composición de cada página. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--crema); color: var(--azul-noche); font-family: var(--fuente-texto); }
+h1, h2, h3, h4 { font-family: var(--fuente-titulos); font-weight: 700; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--naranja-pedal);
+    outline-offset: 3px;
+}
+
+/* La tabla conserva su diseño de la primera semana y permite lectura clara en tarifas. */
+table { width: 100%; border-collapse: collapse; }
+caption { padding: 1rem 0; color: var(--azul-noche); font-family: var(--fuente-titulos); font-size: 1.2rem; font-weight: 700; text-align: left; }
+th, td { padding: .85rem; border: 1px solid #a8afb8; text-align: left; }
+th { background: var(--azul-noche); color: white; }
+tbody tr:nth-child(even) { background: #f0f7f2; }
+
+/* Las tarjetas de la flota mantienen alturas y precios alineados con la grilla responsive de Tailwind. */
+.tarjeta-flota { display: flex; flex-direction: column; overflow: hidden; border: 1px solid #e2e8f0; border-radius: var(--radio-marca); background: white; box-shadow: 0 2px 8px rgb(20 33 61 / 8%); }
+.tarjeta-flota > img { width: 100%; height: 11rem; object-fit: cover; }
+.contenido-flota { display: flex; flex: 1; flex-direction: column; padding: 1.25rem; }
+.contenido-flota h2, .contenido-flota h3 { margin: 0; color: var(--azul-noche); font-size: 1.1rem; }
+.contenido-flota p { margin: .5rem 0; color: var(--gris-asfalto); }
+.contenido-flota .precio-flota { margin-top: auto; padding-top: 1rem; color: var(--verde-ruta); font-size: 1.1rem; font-weight: 700; }
+.precio-flota span { color: var(--gris-asfalto); font-size: .85rem; font-weight: 400; }
+.contenido-flota a { margin-top: .5rem; padding: .6rem 1rem; border-radius: 999px; background: var(--verde-ruta); color: white; font-weight: 700; text-align: center; text-decoration: none; transition: background-color .2s ease; }
+.contenido-flota a:hover { background: #16613f; }
+
+/* El carrusel oculta las promociones inactivas y revela solo la seleccionada. */
+.promo-slide { display: none; }
+.promo-slide.promo-active { display: flex; }
+.carousel-dot.is-current { background: var(--verde-ruta); outline: 2px solid white; outline-offset: 2px; }
+.promo-carousel:focus-within .carousel-control { opacity: 1; }
+
+/* Avisos y políticas usan superficies claras para respetar la paleta del sitio. */
+.form-alert { border: 1px solid #b9d8c4; border-radius: .75rem; background: #eff7f1; color: #174c35; }
+.field-error { display: none; color: #a32121; font-size: .875rem; }
+.was-validated :invalid ~ .field-error { display: block; }
+.was-validated :invalid { border-color: #a32121; }
+dialog { max-width: min(38rem, calc(100% - 2rem)); max-height: 85vh; border: 0; border-radius: var(--radio-marca); padding: 1.5rem; color: var(--azul-noche); box-shadow: 0 1.5rem 4rem rgb(20 33 61 / 28%); }
+dialog::backdrop { background: rgb(20 33 61 / 65%); }
+
+/* El movimiento se reduce cuando la persona lo ha solicitado en su dispositivo. */
+@media (prefers-reduced-motion: reduce) { .promo-slide, .contenido-flota a { transition: none; } }

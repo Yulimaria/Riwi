@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- viewport permite que la cuadrícula de Bootstrap se adapte al ancho del celular. -->
+    <title>Rueda Nocturna | Módulo Bootstrap</title>
+    <meta name="description" content="Una muestra breve de bicicletas y recorridos nocturnos hecha con Bootstrap.">
+    <!-- Bootstrap aporta sus estilos de cuadrícula, navegación, botones y tarjetas desde el CDN oficial. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <!-- Las fuentes y esta hoja propia conservan la marca Rueda Libre sin cargar Tailwind en esta página. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body>
+    <!-- navbar crea la barra; navbar-expand-lg despliega el menú desde pantallas grandes; navbar-dark adapta el botón hamburguesa al fondo oscuro. -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-rueda">
+        <!-- container centra el contenido y limita su ancho como en la landing original. -->
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Rueda Libre</a>
+            <!-- navbar-toggler permite abrir y cerrar el menú en celulares con el JavaScript de Bootstrap. -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuBootstrap"
+                aria-controls="menuBootstrap" aria-expanded="false" aria-label="Abrir o cerrar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- collapse oculta el menú en móvil; navbar-collapse y ms-auto alinean los enlaces al expandirse. -->
+            <div class="collapse navbar-collapse" id="menuBootstrap">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- nav-item organiza cada enlace de la barra y nav-link aplica el estilo de navegación Bootstrap. -->
+                    <li class="nav-item"><a class="nav-link" href="index.html">Rueda Nocturna</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="bootstrap.html">Bootstrap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../paginas/reservas.html">Reservas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- container, row y columnas componen el hero responsive con la cuadrícula propia de Bootstrap. -->
+        <section class="hero-rueda py-5">
+            <div class="container py-lg-4">
+                <div class="row align-items-center g-4">
+                    <!-- col-lg-6 ocupa media fila en escritorio y el ancho completo en celular. -->
+                    <div class="col-12 col-lg-6">
+                        <p class="eyebrow text-uppercase fw-bold mb-2">Módulo de demostración · Bootstrap</p>
+                        <h1 class="display-5 fw-bold mb-3">Pedalea la ciudad de noche</h1>
+                        <p class="lead mb-4">Una pequeña muestra de bicicletas, luces y rutas para recorrer Medellín con Rueda Libre.</p>
+                        <!-- btn usa el componente Bootstrap; btn-rueda aplica el verde personalizado de la marca. -->
+                        <a class="btn btn-rueda btn-lg" href="../paginas/reservas.html">Reserva tu bicicleta</a>
+                        <!-- btn-outline-rueda mantiene el segundo botón visible sobre el fondo crema. -->
+                        <a class="btn btn-outline-rueda btn-lg ms-sm-2 mt-2 mt-sm-0" href="index.html">Volver a Rueda Nocturna</a>
+                    </div>
+                    <!-- col-lg-6 equilibra el texto con la imagen; img-fluid hace que no supere la columna. -->
+                    <div class="col-12 col-lg-6">
+                        <img class="img-fluid hero-imagen rounded-4 shadow"
+                            src="img/rueda-nocturna-portada.png"
+                            alt="Ciclista contempla Medellín iluminada al anochecer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- container centra la sección; row g-4 crea tres tarjetas con separación responsiva. -->
+        <section class="container py-5" aria-labelledby="titulo-bicicletas">
+            <div class="mb-4 d-flex flex-column flex-sm-row align-items-sm-end justify-content-sm-between gap-2">
+                <div>
+                    <p class="eyebrow text-uppercase fw-bold mb-1">Una experiencia sobre dos ruedas</p>
+                    <h2 class="h1 fw-bold mb-0" id="titulo-bicicletas">Lo esencial para tu recorrido</h2>
+                </div>
+                <p class="text-secondary mb-0">Un módulo corto construido con componentes Bootstrap.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- col-md-6 muestra dos tarjetas por fila desde tablet; col-lg-4 organiza tres en escritorio. -->
+                <article class="col-12 col-md-6 col-lg-4">
+                    <!-- card h-100 iguala la altura de las tarjetas; shadow-sm agrega una sombra discreta. -->
+                    <div class="card card-rueda h-100 shadow-sm">
+                        <img src="img/luces-del-centro-noche.png" class="card-img-top tarjeta-imagen"
+                            alt="Ruta nocturna iluminada por el centro de Medellín">
+                        <!-- card-body separa el contenido; card-title y card-text mantienen la jerarquía del componente. -->
+                        <div class="card-body">
+                            <span class="badge text-bg-success mb-2">Bicicleta urbana</span>
+                            <h3 class="card-title h4 fw-bold">Cómoda para la ciudad</h3>
+                            <p class="card-text">Una compañera práctica para disfrutar un paseo tranquilo por las calles iluminadas.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="card card-rueda h-100 shadow-sm">
+                        <img src="img/miradores-noche.png" class="card-img-top tarjeta-imagen"
+                            alt="Luces de Medellín vistas desde una ruta de montaña">
+                        <div class="card-body">
+                            <span class="badge text-bg-warning mb-2">Equipo reflectivo</span>
+                            <h3 class="card-title h4 fw-bold">Luces para rodar seguro</h3>
+                            <p class="card-text">Casco, luces LED y chaleco reflectivo acompañan cada recorrido nocturno.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="card card-rueda h-100 shadow-sm">
+                        <img src="img/luna-las-palmas-noche.png" class="card-img-top tarjeta-imagen"
+                            alt="Paisaje nocturno de Medellín durante una ruta en bicicleta">
+                        <div class="card-body">
+                            <span class="badge badge-hoja mb-2">Ruta guiada</span>
+                            <h3 class="card-title h4 fw-bold">Descubre nuevos caminos</h3>
+                            <p class="card-text">Elige tu nivel y disfruta Medellín acompañado por una persona guía.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- py y text-center son utilidades Bootstrap que separan y alinean el contenido del pie. -->
+    <footer class="footer-rueda py-4 text-center">
+        <div class="container">
+            <p class="mb-1 fw-semibold">Rueda Libre · Medellín</p>
+            <p class="small mb-0">Módulo demostrativo creado con Bootstrap 5.3.</p>
+        </div>
+    </footer>
+
+    <!-- El bundle incluye el JavaScript necesario para el menú desplegable responsive de Bootstrap. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+//html cumple con la funcion de ser el esqueleto del archivo
+
+// css cumple la funcionn de dar estilos al archivo
+URL de solicitud
+http://127.0.0.1:5500/Rueda-libre/index.html
+host
+127.0.0.1:5500
+Código de estado
+304 Not Modified
+puerto 5500
+
+Ruta Inexistente: promociones.html
+Código de estado
+404 Not Found
+Dirección remota
+127.0.0.1:5500
+
+///reto 2 pruebas///
+N.º	Campo	Dato de prueba	Resultado esperado	                                  Resultado obtenido
+1	Nombre	  Dejar vacío	    No permitir el envío si es obligatorio.	              Probada ✓
+2	Nombre	  Al	Rechazar    porque tiene menos de 3 caracteres.	                  Probada ✓
+3	Correo	  usuario123	    Rechazar por formato de correo inválido.	          Probada ✓
+4	Correo	  Dejar vacío	    Rechazar porque es obligatorio.	                      Probada ✓
+5	Celular	  1234567890	    Rechazar porque empieza por 1 y no por 3.	          Probada ✓
+6	Celular	    30012345	    Rechazar porque tiene menos de 10 dígitos.	          Probada ✓
+7	Fecha del alquiler	       2026-10-25	antes del 1 de noviembre.	              Probada ✓
+8	Fecha del alquiler	       2027-01-05	está después del 31 de diciembre.         Probada ✓
+
+
+Se corrigen las rutas de acceso ya que aparecian locales
+//Mapa de uso de color
+### Evaluación de contraste de la paleta de Rueda Libre
+
+Se evaluaron ocho combinaciones de colores utilizando sus códigos hexadecimales y el criterio WCAG 2.2 para accesibilidad visual. Seis combinaciones cumplen el nivel AA para texto normal, con una relación mínima de 4,5:1.
+
+Las combinaciones de blanco sobre Naranja Pedal (2,22:1) y Naranja Pedal sobre Crema (2,06:1) no cumplen el contraste mínimo requerido para texto normal. Se recomienda utilizar Azul Noche sobre Naranja Pedal para botones secundarios y reservar el naranja para elementos decorativos o destacados que no dependan únicamente del color para transmitir información.
+
+Las demás combinaciones evaluadas cumplen el nivel AA para texto normal. La selección final debe considerar tanto la legibilidad como la identidad visual de la marca.
+
+Actividad: Herencia en CSS
+
+Propiedad heredada: color.
+En DevTools comprobé que el párrafo utiliza el color
+rgb(20, 33, 61), correspondiente al azul noche (#14213D)
+definido en el body.
+
+Propiedad no heredada: margin-bottom.
+Los márgenes del párrafo se calculan a partir de sus
+propios estilos y no se heredan del body.
+
+Aprendizaje:
+La herencia permite que propiedades como color y
+font-family pasen del elemento padre a sus hijos.
+Propiedades como margin-bottom no se heredan normalmente.
+
+1. Identificación del enlace de la página actual
+
+Se identificó el enlace correspondiente a la página actual mediante la clase activo en el HTML. Esta clase permite diferenciar visualmente la página en la que se encuentra el usuario respecto a las demás opciones del menú.
+
+2. Resolución del conflicto de especificidad
+
+Se utilizó DevTools para inspeccionar las reglas CSS y comprobar cuál selector tenía prioridad. El conflicto se corrigió ajustando los selectores, sin utilizar !important ni estilos en línea.
+
+------------------------------------------------------------------------------------------------------------
+Reto 10 navegacion con estados y sin conflico
+
+reto 12
+Se revisó y organizó el CSS de Rueda Libre por secciones, se quitaron reglas duplicadas o sin uso y se corrigieron algunos selectores. También se verificó que las tres páginas enlazaran la misma hoja de estilos y se ajustaron las rutas para cada ubicación.
+Se limitó el ancho de las imágenes para evitar que ocuparan toda la página, y se ordenó el menú principal en vertical. En la página de inicio, la sección Nuestros servicios quedó organizada en tarjetas sin viñetas; el enlace a tarifas ahora aparece junto a “Rutas guiadas” y la promoción de bicicletas eléctricas está integrada en la lista.
+SEMANA 2 – CONTINUACIÓN DEL PROYECTO RUEDA LIBRE (TAILWIND CSS)
+
+Se mantuvo la identidad visual existente: verde como color de acción, azul oscuro en la navegación y fotografías de Medellín. Para esta continuación se usó Tailwind CSS, según la decisión del proyecto; no se agregó Bootstrap.
+
+Días 5 y 6 – Catálogo y beneficios
+Se organizó el catálogo de bicicletas en tarjetas adaptables a distintos tamaños de pantalla y se agregó una sección de beneficios. La página de pruebas pruebas/catalogo-tailwind.html permite revisar estas tarjetas y sus variaciones.
+
+Día 7 – Adaptación de las páginas
+Se actualizaron Inicio, Tarifas, Reservas y Nosotros conservando la navegación, los colores y el tono visual de Rueda Libre. Tarifas presenta sus tablas de precios y rutas; Reservas incluye campos obligatorios, validación del navegador, mensajes de ayuda y políticas en una ventana accesible.
+
+Día 8 – Navegación e interacción
+Se agregó un menú adaptable para pantallas pequeñas y un carrusel con controles, indicadores y avance automático. El carrusel se detiene al recibir foco o al pasar el puntero, y respeta la preferencia del sistema para reducir movimiento.
+
+Día 9 – Pruebas y accesibilidad
+Se revisaron las rutas entre páginas, los textos alternativos de imágenes, los estados del formulario y los controles del carrusel. Los mensajes de reserva son demostrativos y no envían datos a un servidor.
+
+Día 10 – Estilos propios
+Se mantuvieron variables CSS para colores y estilos de componentes que complementan las utilidades Tailwind. No se incorporó Bootstrap ni se usó !important.
+
+Cinco utilidades Tailwind usadas como ejemplo:
+- md:grid-cols-12: distribuye el contenido en doce columnas desde pantallas medianas.
+- lg:col-span-8: ocupa ocho columnas desde pantallas grandes.
+- grid-cols-1: muestra una columna en pantallas pequeñas.
+- sm:grid-cols-2: cambia a dos columnas desde el punto sm.
+- xl:grid-cols-4: presenta cuatro tarjetas en pantallas extra grandes.
+
+Días 11 y 12 – Bitácora y entrega
+Se guardó la captura de referencia inicial en img/capturas/antes.png y se documentaron los cambios realizados. No se pudo registrar una duración real ni comparar el tamaño con la versión 1.5 porque no hay medición previa disponible. Tampoco se registró un commit o publicación: la carpeta del proyecto no tiene un repositorio Git propio y el repositorio detectado en una carpeta superior pertenece a otro proyecto. Se entrega una copia comprimida del proyecto actualizado.
+
+SEMANA 3 – MÓDULO RUEDA NOCTURNA (TAILWIND)
+
+Día 1 – Prototipo de campaña
+Se creó nocturna/prototipo.html con la etiqueta “Nuevo · Jueves a sábado”, el título único “Rueda Nocturna”, su subtítulo, los datos “3 rutas” y “Desde $55.000”, y el enlace “Inscríbete”. El prototipo usa el Play CDN de Tailwind y utilidades; no contiene bloques <style> ni atributos style. Se mantuvo la indicación del proyecto de no incorporar Bootstrap.
+
+El botón de la semana 2 se construyó con utilidades Tailwind: inline-flex alinea contenido, px/py dan relleno, el fondo verde define la acción y las variantes hover y focus-visible muestran interacción. La consigna propone compararlo con Bootstrap: Bootstrap suele ofrecer componentes listos con estilos asociados; Tailwind es utility-first y permite armar el estilo combinando utilidades pequeñas en el HTML. En este proyecto se documenta esa diferencia sin agregar Bootstrap.
+
+Día 2 – Configuración para producción
+Se creó nocturna/src/input.css con @import "tailwindcss", junto a package.json, package-lock.json y .gitignore para excluir node_modules. La página nocturna/index.html enlaza src/output.css y contiene el hero de la campaña y las tres variantes de botón. Se generó el CSS con las utilidades encontradas en las tres páginas HTML. En output.css aparece la utilidad usada rounded-xl y no aparece bg-pink-500 porque Tailwind solo genera las clases que encuentra en los archivos fuente escaneados. El script watch:css queda configurado para regenerar el archivo mientras se trabaja.
+
+Día 3 – Rutas
+Se añadieron las rutas Luces del Centro (10 km, 2 h, fácil, $55.000), Miradores de la Ciudad (16 km, 3 h, medio, $75.000) y Luna en Las Palmas (22 km, 3,5 h, difícil, $95.000). Cada tarjeta indica la sede Rueda Libre como encuentro e incluye bicicleta, casco, luces LED, chaleco reflectivo y guía. Se mantuvo la misma estructura, altura de imagen, radios, espacio interior y botón; el nivel se expresa con texto y color. El hover modifica borde y sombra sin mover la tarjeta.
+
+Día 4 – Página de componentes
+Se creó nocturna/componentes.html con botones principal, secundario y de contorno; una tarjeta de ruta; alertas de información, éxito y advertencia; y campos etiquetados de correo y celular con texto de ayuda. El aviso de éxito utiliza role="status" y aria-live="polite". Los enlaces y campos tienen foco visible al navegar con teclado.
+
+Reglas visuales del kit
+- Fondo nocturno de marca: #14213D; superficies claras #E5EFD9 y texto blanco sobre el fondo oscuro.
+- Verde Ruta #1E7A4F para acciones y Amarillo Farol #F39A2B para acentos con contraste en modo oscuro.
+- rounded-xl para botones, campos y alertas; rounded-2xl para tarjetas.
+- p-5/p-6 como relleno interior; gap-4/gap-5 y space-y-5/space-y-6 como separación.
+- Imágenes de campaña y rutas comparten formato panorámico y la misma ilustración nocturna pintada.
+
+Las cuatro ilustraciones del módulo se crearon en el estilo pictórico del proyecto, con Medellín y rutas en horario nocturno, luces cálidas y ciclistas visibles.
+
+La publicación, el commit y el push quedan pendientes: el directorio Rueda-libre no tiene repositorio propio y el repositorio detectado en la carpeta superior corresponde a otro proyecto. No se publicó una URL de GitHub Pages para evitar enviar estos archivos al repositorio equivocado.
+
+SEMANA 3 – CONTINUACIÓN: LANDING, RESPONSIVE, TEMA Y OPTIMIZACIÓN
+
+Día 5 – Landing de Rueda Nocturna
+Se completó nocturna/index.html como página semántica con header, nav, main, secciones y footer. El encabezado y las secciones comparten el contenedor mx-auto max-w-6xl px-6. Se añadieron el hero, tres tarjetas de rutas, cuatro pasos y una llamada a la acción. El catálogo usa una cuadrícula uniforme; el pie distribuye marca, contacto y enlaces en tres bloques. Los enlaces del menú conducen a secciones existentes y los botones de inscripción dirigen al formulario de reservas del proyecto. Las listas de utilidades relevantes tienen comentarios HTML en español que explican su propósito debajo del elemento.
+
+Día 6 – Comportamiento adaptable
+Las tarjetas usan grid-cols-1, sm:grid-cols-2 y lg:grid-cols-3; los cuatro pasos usan grid-cols-1, sm:grid-cols-2 y lg:grid-cols-4. El encabezado se apila en celular, oculta los enlaces de navegación hasta md y conserva visible el botón Inscríbete. El pie y el bloque de inscripción cambian de columna a fila según el espacio. Se inspeccionó la página en navegador en un ancho disponible de 319 px: la página midió 304 px de ancho de documento, sin desbordamiento horizontal, y el menú mantuvo visible la marca y el botón. Las combinaciones previstas por los breakpoints Tailwind para 360, 768, 1024 y 1280 px se describen con las clases anteriores; no se registran como mediciones visuales porque no se pudo cambiar el tamaño de ventana del navegador en esta sesión.
+
+Día 7 – Tema de marca y contraste
+Se definieron en @theme Verde Ruta (#1E7A4F), Azul Noche (#14213D), Amarillo Farol (#F39A2B), Hoja Suave (#E5EFD9), Crema Ciclovía (#F0EDE3), Gris Medellín (#5B6470), Montserrat para títulos y Open Sans para texto. La landing y componentes.html usan estos tokens, Google Fonts y las variantes dark: que siguen la preferencia del sistema. Contrastes calculados con WCAG: Verde Ruta sobre blanco 5,31:1; Verde Ruta sobre Crema Ciclovía 4,54:1; Azul Noche sobre blanco 15,97:1; Gris Medellín sobre blanco 6,00:1; Amarillo Farol sobre Azul Noche 7,20:1; Hoja Suave sobre Azul Noche 13,45:1. Verde Ruta sobre Azul Noche alcanza solo 3,01:1, por lo que se usa Hoja Suave o Amarillo Farol para textos y focos sobre el fondo oscuro.
+
+Día 9 – Reutilización y tamaño de salida
+En las tres páginas nocturnas se contaron 189 atributos class. La clase de botón btn-primary se reutiliza 8 veces, btn-secondary 2 veces, btn-outline 1 vez y las tres tarjetas de ruta comparten la misma lista base de clases. En src/input.css se mantienen exactamente tres clases propias con @apply, una por variante de botón; las tarjetas y la distribución conservan sus utilidades visibles en el HTML. src/output.css mide 35.285 bytes y src/output.min.css 28.045 bytes; la versión minificada ocupa 20,5 % menos. La reducción corresponde al CSS de Tailwind de este módulo. No hay un paquete de Bootstrap ni una captura del tamaño de Bootstrap de la versión 2.0 en el proyecto, por lo que no se inventa una comparación de peso. Recomendación: continuar con Tailwind, ya que es la elección acordada, usa el tema de la marca y permite mantener las clases de layout explicadas junto al HTML. Bootstrap ofrece componentes listos; Tailwind requiere combinar utilidades, pero facilita adaptar estas páginas al diseño y al kit del proyecto.
+
+Alcance de verificación y entrega
+Se confirmó en el navegador local que index.html carga la hoja compilada, presenta un único h1, las tres tarjetas y los cuatro pasos, y no desborda el ancho observado. Las hojas CSS y el JSON del paquete de Tailwind se encontraron en el proyecto; no se encontró ningún recurso Bootstrap para medir. El comando build:css:min queda en package.json para que npm genere la versión minificada en el entorno local. Commit, push y publicación siguen pendientes por el repositorio superior no relacionado, según lo explicado en la bitácora anterior.
+
+SEMANA 3 – CIERRE DE LOS MINIRETOS 9 A 12
+
+Día 9 – Formulario de inscripción
+Se agregó en nocturna/index.html un formulario semántico con dos fieldsets y sus legends, etiquetas asociadas y controles para nombre, correo, celular, ruta, día de salida, acompañantes, nivel, bicicleta propia y aceptación de condiciones. Las reglas usan required, minlength, pattern con title, min y max; el patrón del celular es 3[0-9]{9}. Los campos cortos se muestran en una columna en celular y dos desde md. Los colores, bordes y focos incluyen variantes dark:. El envío abre un correo a soporte@ruedalibre.com para revisión y confirmación manual; todavía no hay servidor que reciba o guarde solicitudes automáticamente.
+
+Pruebas locales del formulario, sin enviar datos: el formulario vacío mostró 15 controles inválidos; datos de prueba deliberadamente incorrectos activaron las reglas de nombre, correo, celular y acompañantes; al completar todos los campos de prueba quedaron 0 controles inválidos. El recorrido con Tab pasó por los controles en orden y llegó al botón de envío y enlaces del pie. No se pulsó Enviar inscripción.
+
+Día 10 – Integración entre el sitio y la campaña
+El menú de inicio, tarifas, reservas y nosotros enlaza a nocturna/index.html. La portada incluye una cuarta diapositiva y su cuarto indicador, con enlace a la landing. En sentido de regreso, el logo de la landing abre index.html y el botón Reserva tu bici abre paginas/reservas.html. Los tonos Verde Ruta (#1E7A4F), Azul Noche (#14213D), Amarillo Farol (#F39A2B), Hoja Suave (#E5EFD9) y Crema Ciclovía (#F0EDE3) coinciden entre CSS y @theme; Montserrat, Open Sans y soporte@ruedalibre.com también coinciden. Se mantiene Tailwind por instrucción del proyecto y no se añade Bootstrap.
+
+Día 11 – Planes comerciales
+Se creó la sección Planes Rueda Nocturna con Individual ($55.000 por persona), Pareja ($99.000 las dos personas) y Grupo de cuatro a ocho ($45.000 por persona), con los beneficios pedidos en cada plan. Grid presenta una columna en celular y tres desde lg. Las cards usan la misma estructura, p-6, h-full y flex-col; sus listas flex-1 dejan los botones al final. Pareja se distingue mediante borde más grueso, fondo alterno y la etiqueta “Más elegido”; no se usa desplazamiento ni transformación. Las variantes dark: mantienen el tema.
+
+Reutilización y salida CSS, revisión actual
+En las tres páginas de nocturna se contaron 265 atributos class: btn-primary aparece 9 veces, btn-secondary 2 y btn-outline 4. Las tres cards de rutas y las tres cards de planes repiten estructuras visuales; src/input.css conserva tres clases propias con @apply para las variantes de botón. src/output.css mide 26.966 bytes y src/output.min.css 20.799 bytes; nocturna/src/output.css mide 37.999 bytes y nocturna/src/output.min.css 30.088 bytes. Las reducciones son 22,9 % y 20,8 %, respectivamente. El CSS de la landing contiene las reglas dark: basadas en la preferencia del sistema.
+
+Día 12 – Documentación y comprobación final
+Se creó README.md con descripción, páginas, tecnologías, recomendación de framework, mapa de los 12 MiniRetos y guion de demo de tres minutos. Se comprobó en ocho documentos HTML que no hay atributos style en línea y que las rutas relativas locales y fragmentos apuntan a recursos existentes; se decodificaron los espacios URL (%20) al comprobar los nombres físicos de archivos. En la revisión inicial, el ancho de navegador disponible fue 319 px, con documento de 304 px y sin desbordamiento horizontal.
+
+El servicio W3C Nu devolvió 0 errores y 0 avisos para nocturna/index.html y paginas/reservas.html después de corregir dos rutas de imagen con espacios y separar un botón interactivo de la etiqueta del campo. Una repetición sobre los últimos ajustes recibió HTTP 429 de Cloudflare, por lo que falta reintentar la validación exacta cuando termine el límite de solicitudes. El cierre generó capturas finales de escritorio (1366 × 768), móvil (360 × 900) y tema oscuro (1366 × 768) en img/capturas/. Se corrigió también el espaciado vertical y el color de fondo de la sección Rutas: Azul Noche ahora aparece solo en modo oscuro. El texto del hero ocupa el ancho disponible en celular. No se revisaron aquí los tamaños 768 y 1280 px. El guion de demo está preparado, pero no se ensayó con una persona compañera ni se anotó su retroalimentación.
+
+Registro de tiempo y publicación
+No se inició un cronómetro al comienzo de las actividades de los días 9 y 11, por lo que no se inventa un tiempo real. La demo tampoco fue cronometrada. El directorio del proyecto no tiene repositorio Git independiente y la carpeta superior está vinculada a https://github.com/Yulimaria/algoritmia.git, un remoto ajeno a este trabajo. No se hizo commit, push ni publicación; faltan la URL correcta del repositorio y su configuración de GitHub Pages.
+
+Actualización final de estilos: las hojas compiladas se sincronizaron desde Tailwind 4.3.4. Las versiones minificadas miden 29.360 bytes (sitio principal) y 31.258 bytes (landing nocturna). En modo claro, la sección de rutas conserva el fondo crema; en modo oscuro usa Azul Noche. Las capturas se regeneraron en Edge y se comprobó que el ancho del documento coincide con el viewport a 1366 px y 360 px, sin desbordamiento horizontal.

@@ -1,0 +1,111 @@
+
+/* ===================================== */
+/* CONTENEDOR DE CADA TARJETA */
+/* ===================================== */
+
+.flip-card {
+    width: 160px;
+    height: 160px;
+
+    /* Crea la sensación de profundidad para el efecto 3D.
+       Cuanto menor sea el valor, más pronunciado será el efecto. */
+    perspective: 1000px;
+
+    /* Cambia el cursor para indicar que la tarjeta es interactiva. */
+    cursor: pointer;
+}
+
+
+/* ===================================== */
+/* CONSTRUCCIÓN INTERNA DE LA TARJETA */
+/* ===================================== */
+
+/* Este contenedor agrupa las dos caras de la tarjeta
+   y permite realizar el movimiento de rotación. */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+
+    /* Sirve como referencia para posicionar las dos caras. */
+    position: relative;
+
+    /* Permite conservar el efecto tridimensional de las caras. */
+    transform-style: preserve-3d;
+
+    /* Hace que el movimiento de giro sea suave. */
+    transition: transform 0.8s;
+}
+
+
+/* ===================================== */
+/* PROPIEDADES COMPARTIDAS DE LAS DOS CARAS */
+/* ===================================== */
+
+/* Aquí estoy creando las propiedades de la tarjeta,
+   tanto para su parte frontal como para la posterior. */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+
+    /* Ambas caras ocupan todo el espacio de la tarjeta. */
+    width: 100%;
+    height: 100%;
+
+    /* Convierte las caras en círculos. */
+    border-radius: 50%;
+
+    /* Utilizamos Flexbox para centrar el contenido. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Centra el texto. */
+    text-align: center;
+
+    /* Oculta la cara que queda detrás durante la rotación. */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* ===================================== */
+/* CARA FRONTAL */
+/* ===================================== */
+
+.flip-card-front {
+    /* Color de fondo de la cara frontal. */
+    background-color: #D1FAE5;
+
+    /* Color del texto. */
+    color: #052F27;
+}
+
+
+/* ===================================== */
+/* CARA POSTERIOR */
+/* ===================================== */
+
+.flip-card-back {
+    /* Color de fondo de la cara posterior. */
+    background-color: #0B4035;
+
+    /* Color del texto. */
+    color: white;
+
+    /* Gira la cara posterior 180 grados
+       para que aparezca correctamente al voltear la tarjeta. */
+    transform: rotateY(180deg);
+}
+
+
+/* ===================================== */
+/* ANIMACIÓN DE LA TARJETA */
+/* ===================================== */
+
+/* Cuando JavaScript agrega la clase "girada",
+   el contenedor interno rota 180 grados
+   y muestra la cara posterior. */
+.flip-card.girada .flip-card-inner {
+    transform: rotateY(180deg);
+}

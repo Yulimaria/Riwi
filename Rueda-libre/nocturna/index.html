@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/output.min.css">
+    <!-- Este CSS propio evita que las reglas globales de enlaces del sitio alteren los botones del kit. -->
+    <title>Rueda Nocturna | Rueda Libre</title>
+</head>
+
+<body class="bg-crema-ciclovia font-texto text-azul-noche dark:bg-azul-noche dark:text-white">
+    <!-- Las clases sin dark: se usan en modo claro; dark: adapta fondo y texto a la preferencia del sistema. -->
+    <header
+        class="relative isolate z-30 border-b border-gris-medellin/20 bg-hoja-suave dark:border-white/20 dark:bg-azul-noche">
+        <img src="../img/Ghibli-Inspired%20Leaf%20Corner%20Frame.png" alt="" aria-hidden="true"
+            class="absolute top-38 left-0 z-0 h-auto w-1/6 pointer-events-none md:w-1/6">
+        <!-- %20 codifica los espacios de la ruta de imagen y aria-hidden la deja como decoración. -->
+        <img src="../img/Ghibli-Inspired%20Leaf%20Corner%20Frame.png" alt="" aria-hidden="true"
+            class="absolute top-38 right-0 z-0 h-auto w-1/6 pointer-events-none md:w-1/6">
+        <!-- La segunda esquina usa la misma imagen y conserva la ruta relativa a la carpeta img.
+         top-0 se usa para alinearla en la parte superior. -->
+        <!-- md:w-1/6 se usa para adaptar el ancho en escritorio. -->
+        <!-- El borde y fondo usan tonos de marca; las variantes dark: responden a prefers-color-scheme del sistema. -->
+        <nav
+            class="relative z-50 mx-auto flex max-w-6xl flex-col items-stretch gap-4 px-6 py-5 md:flex-row md:items-center md:justify-between">
+            <!-- mx-auto/max-w-6xl centran y limitan; flex-col apila en celular; md:flex-row/justify-between/ items-center forman la fila en escritorio; gap/px/py dan espacio. -->
+            <a href="../index.html"
+                class="font-titulos text-xl font-bold tracking-wide text-azul-noche transition-colors hover:text-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:text-white dark:focus-visible:ring-amarillo-farol dark:hover:text-amarillo-farol">Rueda
+                Libre</a>
+            <!-- El logo vuelve al inicio del sitio principal; la fuente y el espaciado mantienen la jerarquía de marca. -->
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+                <!-- El grupo apila el menú y el CTA en móvil; desde md los coloca en una fila centrada. -->
+                <div
+                    class="hidden flex-col gap-3 text-sm font-semibold text-azul-noche  md:flex md:flex-row md:items-center md:gap-6 dark:text-white">
+                    <!-- hidden oculta los enlaces en celular; md:flex los muestra desde tablet; flex-col/md:flex-row adapta; gap separa; colores cambian en dark. -->
+                    <a href="#rutas"
+                        class="transition-colors hover:text-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:hover:text-amarillo-farol">Rutas</a>
+                    <!-- #rutas lleva a la sección correspondiente; hover usa Verde Ruta y el anillo Farol marca el foco. -->
+                    <a href="../index.html"
+                        class="transition-colors hover:text-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:hover:text-amarillo-farol">Inicio</a>
+                    <!-- El enlace Inicio vuelve a Rueda Libre desde la navegación nocturna. -->
+                    <a href="#como-funciona"
+                        class="transition-colors hover:text-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:hover:text-amarillo-farol">Cómo
+                        funciona</a>
+                    <!-- Cada enlace del encabezado apunta al id de una sección real de la página. -->
+                    <a href="#inscripcion"
+                        class="transition-colors hover:text-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:hover:text-amarillo-farol">Inscripción</a>
+                    <a href="#planes"
+                        class="transition-colors hover:text-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:hover:text-amarillo-farol">Planes</a>
+                    <!-- Este enlace abre la sección de precios añadida a la landing. -->
+                    <a href="bootstrap.html"
+                        class="transition-colors hover:text-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:hover:text-amarillo-farol">Bootstrap</a>
+                    <!-- Abre una página aparte hecha con Bootstrap; la landing principal conserva Tailwind. -->
+                </div>
+                <a href="#inscripcion" class="btn-primary self-start md:self-auto">Inscríbete</a>
+                <!-- btn-primary reutiliza el botón definido en el kit; self-start evita estirarlo en móvil y md:self-auto lo alinea en la fila. -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero de campaña: la ilustración nocturna conserva la identidad del proyecto en ambos modos. -->
+        <section id="inicio" class="relative isolate overflow-hidden bg-azul-noche">
+            <!-- relative/isolate ordenan las capas; overflow-hidden recorta; Azul Noche forma la base de respaldo. -->
+            <img src="img/rueda-nocturna-portada.png"
+                alt="Ciclista observa las luces nocturnas de Medellín bajo un cielo azul oscuro"
+                class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
+            <!-- inset-0/-z-10 colocan la imagen detrás; h-full/w-full cubren el bloque; object-cover no la deforma. -->
+            <div class="absolute inset-0 -z-10 bg-linear-to-r from-azul-noche/70 via-azul-noche/75 to-azul-noche/25">
+                <!-- inset-0/-z-10 colocan el gradiente detrás; bg-linear-to-r crea la transición de izquierda a derecha en la imagen; from/via/to definen los colores y opacidades de la imagen. -->
+
+            </div>
+            <!-- El gradiente azul oscuro mantiene legible el texto claro sobre la ilustración. -->
+            <div class="mx-auto max-w-6xl px-6 py-20 sm:py-28 lg:py-36">
+                <!-- Todas las secciones usan el mismo max-w-6xl y px-6; py aumenta progresivamente en pantallas grandes. -->
+                <div class="max-w-2xl space-y-6">
+                    <!-- max-w-2xl limita el texto; space-y-6 separa etiqueta, título, descripción y acciones. -->
+                    <p class="text-sm font-bold uppercase tracking-[0.16em] text-hoja-suave">Nuevo · Jueves a sábado</p>
+                    <!-- text-sm/font-bold/uppercase/tracking componen la etiqueta; Hoja Suave conserva contraste sobre azul oscuro. -->
+                    <h1
+                        class="font-titulos text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+                        Rueda Nocturna</h1>
+                    <!-- Único h1: font-titulos define Montserrat; text crece en sm/lg; leading/tracking ajustan forma y lectura. -->
+                    <p class="w-full max-w-xl text-lg leading-tight text-white sm:text-xl">Descubre Medellín en bici
+                        cuando se
+                        encienden las luces.</p>
+                    <!-- w-full aprovecha el ancho disponible; max-w-xl limita la lectura; text-lg/sm:text-xl escala y text-white contrasta con el fondo. -->
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <!-- flex/flex-wrap adaptan los datos; gap-4 los separa; pt-2 deja aire antes de las cifras. -->
+                        <p
+                            class="rounded-xl border border-white/20 bg-azul-noche/70 px-5 py-4 text-lg font-semibold text-white shadow-md">
+                            <span class="text-amarillo-farol">3 rutas</span>
+                        </p>
+                        <!-- rounded/border/bg dan forma; px/py crean relleno; Amarillo Farol resalta el dato sobre Azul Noche. -->
+                        <p
+                            class="rounded-xl border border-white/20 bg-azul-noche/70 px-5 py-4 text-lg font-semibold text-white shadow-md">
+                            <span class="text-amarillo-farol">Desde $55.000</span>
+                        </p>
+                        <!-- Repite exactamente el estilo del dato anterior para mantener el kit uniforme. -->
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <!-- flex/flex-wrap y gap-3 dejan que los dos botones se acomoden en pantallas estrechas. -->
+                        <a href="#inscripcion" class="btn-primary">Inscríbete</a>
+                        <!-- Reutiliza la variante primaria del kit, sin crear un estilo nuevo. -->
+                        <a href="#rutas" class="btn-secondary">Conoce las rutas</a>
+                        <!-- Reutiliza el botón secundario documentado en componentes.html. -->
+                        <a href="../paginas/reservas.html"
+                            class="btn-outline border-amarillo-farol text-amarillo-farol hover:bg-amarillo-farol hover:text-azul-noche focus-visible:ring-amarillo-farol">Reserva
+                            tu bici</a>
+                        <!-- Reutiliza btn-outline; el acento Farol mantiene contraste sobre el hero oscuro y vuelve al alquiler. -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Las tres tarjetas usan la misma estructura del kit y el mismo contenedor de página. -->
+        <section id="rutas" class="py-12 sm:py-16 lg:py-20 dark:bg-azul-noche">
+            <!-- El id coincide con el ancla; py aumenta el espacio por tamaño y dark:bg activa Azul Noche en tema oscuro. -->
+            <div class="mx-auto max-w-6xl px-6">
+                <!-- Ancho máximo y relleno lateral compartidos por todas las secciones. -->
+                <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <!-- En móvil el título se apila; desde sm se alinea en fila al borde inferior. -->
+                    <div>
+                        <p class="text-sm font-bold uppercase tracking-[0.16em] text-verde-ruta dark:text-hoja-suave">
+                            Pedalea después del atardecer</p>
+                        <!-- Verde Ruta sobre fondo claro; Hoja Suave en modo oscuro para conservar el contraste. -->
+                        <h2 class="mt-2 font-titulos text-3xl font-bold sm:text-4xl">Rutas de Rueda Nocturna</h2>
+                        <!-- mt-2 separa el título; Montserrat y text responsive mantienen jerarquía. -->
+                    </div>
+                    <p class="max-w-xl leading-relaxed text-gris-medellin dark:text-hoja-suave">Todas las salidas
+                        incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                    <!-- max-w-xl limita lectura; el tono secundario claro cambia a Hoja Suave en dark. -->
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Una columna en celular, dos desde 640 px y tres desde 1024 px; gap-6 mantiene separación. -->
+                    <article
+                        class="flex h-full flex-col overflow-hidden rounded-2xl border border-gris-medellin/20 bg-white text-azul-noche shadow-md transition-shadow hover:border-verde-ruta hover:shadow-xl dark:border-white/20 dark:bg-azul-noche dark:text-white dark:hover:border-amarillo-farol">
+                        <!-- Las tres cards comparten estas clases; flex-col permite fijar el precio al fondo; dark modifica fondo, texto y borde. -->
+                        <img src="img/luces-del-centro-noche.png"
+                            alt="Dos ciclistas recorren una ciclovía iluminada junto al centro de Medellín"
+                            class="h-52 w-full object-cover sm:h-56">
+                        <!-- Alt describe la imagen; altura constante y object-cover mantienen proporción y recorte. -->
+                        <div class="flex flex-1 flex-col gap-5 p-5 sm:p-6">
+                            <!-- flex-1 iguala alturas; flex-col/gap ordenan; p-5/sm:p-6 ajustan relleno por pantalla. -->
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                                <!-- Nombre y nivel comparten fila; flex-wrap permite reflujo y gap evita que se junten. -->
+                                <h3 class="font-titulos text-xl font-bold">Luces del Centro</h3>
+                                <!-- Nombre destacado con Montserrat. -->
+                                <span
+                                    class="rounded-full bg-hoja-suave px-3 py-1 text-sm font-bold text-azul-noche">Fácil</span>
+                                <!-- Hoja Suave/azul comunica la categoría también por texto, no solo por color. -->
+                            </div>
+                            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                <!-- Datos en columna en celular y en tres columnas cuando hay espacio. -->
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Distancia</dt>
+                                    <dd class="mt-1 font-semibold">10 km</dd>
+                                </div>
+                                <!-- dt es rótulo secundario; dd es dato; mt-1 los separa; font-semibold lo destaca. -->
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Duración</dt>
+                                    <dd class="mt-1 font-semibold">2 h</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Encuentro</dt>
+                                    <dd class="mt-1 font-semibold">Sede Rueda Libre</dd>
+                                </div>
+                            </dl>
+                            <div
+                                class="mt-auto flex flex-wrap items-center justify-between gap-4 border-t border-gris-medellin/20 pt-4 dark:border-white/20">
+                                <!-- mt-auto alinea abajo; flex/justify distribuyen; borde y pt-4 separan precio y acción. -->
+                                <p class="font-titulos text-2xl font-bold text-verde-ruta dark:text-hoja-suave">$55.000
+                                </p>
+                                <!-- Verde Ruta funciona en superficie blanca; Hoja Suave tiene mejor contraste en Azul Noche. -->
+                                <a href="../paginas/reservas.html" class="btn-primary">Inscríbete</a>
+                                <!-- Se reutiliza el mismo botón del kit en cada tarjeta. -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="flex h-full flex-col overflow-hidden rounded-2xl border border-gris-medellin/20 bg-white text-azul-noche shadow-md transition-shadow hover:border-verde-ruta hover:shadow-xl dark:border-white/20 dark:bg-azul-noche dark:text-white dark:hover:border-amarillo-farol">
+                        <!-- Estructura y clases iguales a la card anterior; solo cambian los datos y el color/texto de nivel. -->
+                        <img src="img/miradores-noche.png"
+                            alt="Grupo de ciclistas sube hacia un mirador iluminado en Las Palmas"
+                            class="h-52 w-full object-cover sm:h-56">
+                        <!-- Mismo alto para que las tarjetas formen una cuadrícula ordenada. -->
+                        <div class="flex flex-1 flex-col gap-5 p-5 sm:p-6">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                                <h3 class="font-titulos text-xl font-bold">Miradores de la Ciudad</h3>
+                                <span
+                                    class="rounded-full bg-amarillo-farol px-3 py-1 text-sm font-bold text-azul-noche">Medio</span>
+                                <!-- El amarillo indica el nivel intermedio; el texto Medio evita depender solo del color. -->
+                            </div>
+                            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Distancia</dt>
+                                    <dd class="mt-1 font-semibold">16 km</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Duración</dt>
+                                    <dd class="mt-1 font-semibold">3 h</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Encuentro</dt>
+                                    <dd class="mt-1 font-semibold">Sede Rueda Libre</dd>
+                                </div>
+                            </dl>
+                            <div
+                                class="mt-auto flex flex-wrap items-center justify-between gap-4 border-t border-gris-medellin/20 pt-4 dark:border-white/20">
+                                <p class="font-titulos text-2xl font-bold text-verde-ruta dark:text-hoja-suave">$75.000
+                                </p>
+                                <a href="../paginas/reservas.html" class="btn-primary">Inscríbete</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="flex h-full flex-col overflow-hidden rounded-2xl border border-gris-medellin/20 bg-white text-azul-noche shadow-md transition-shadow hover:border-verde-ruta hover:shadow-xl dark:border-white/20 dark:bg-azul-noche dark:text-white dark:hover:border-amarillo-farol">
+                        <!-- Se conservan el mismo layout, el mismo hover y el mismo botón base. -->
+                        <img src="img/luna-las-palmas-noche.png"
+                            alt="Ciclistas con chalecos reflectivos avanzan por una ruta nocturna de montaña"
+                            class="h-52 w-full object-cover sm:h-56">
+                        <div class="flex flex-1 flex-col gap-5 p-5 sm:p-6">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                                <h3 class="font-titulos text-xl font-bold">Luna en Las Palmas</h3>
+                                <span
+                                    class="rounded-full bg-gris-medellin px-3 py-1 text-sm font-bold text-white">Difícil</span>
+                                <!-- El gris y la palabra Difícil identifican la ruta exigente; texto blanco supera el contraste del gris. -->
+                            </div>
+                            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Distancia</dt>
+                                    <dd class="mt-1 font-semibold">22 km</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Duración</dt>
+                                    <dd class="mt-1 font-semibold">3,5 h</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-sm text-gris-medellin dark:text-hoja-suave">Encuentro</dt>
+                                    <dd class="mt-1 font-semibold">Sede Rueda Libre</dd>
+                                </div>
+                            </dl>
+                            <div
+                                class="mt-auto flex flex-wrap items-center justify-between gap-4 border-t border-gris-medellin/20 pt-4 dark:border-white/20">
+                                <p class="font-titulos text-2xl font-bold text-verde-ruta dark:text-hoja-suave">$95.000
+                                </p>
+                                <a href="../paginas/reservas.html" class="btn-primary">Inscríbete</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="planes" class="bg-hoja-suave py-12 dark:bg-azul-noche sm:py-16 lg:py-20">
+            <!-- El fondo alterno cambia a Azul Noche en el modo oscuro del sistema. -->
+            <div class="mx-auto max-w-6xl px-6">
+                <!-- El contenedor compartido alinea la sección con el hero y las rutas. -->
+                <div class="mb-8 max-w-2xl">
+                    <p class="text-sm font-bold uppercase tracking-[0.16em] text-verde-ruta dark:text-amarillo-farol">
+                        Una rodada para cada plan</p>
+                    <!-- El verde destaca sobre fondo claro; el amarillo conserva contraste en dark. -->
+                    <h2 class="mt-2 font-titulos text-3xl font-bold sm:text-4xl">Planes Rueda Nocturna</h2>
+                    <!-- Montserrat y el tamaño responsive repiten la jerarquía tipográfica del módulo. -->
+                    <p class="mt-3 leading-relaxed text-gris-medellin dark:text-hoja-suave">Elige cómo quieres recorrer
+                        Medellín cuando cae la noche.</p>
+                    <!-- El texto secundario se aclara cuando el fondo es oscuro. -->
+                </div>
+                <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
+                    <!-- Una columna en celular y tres desde lg; items-stretch iguala la altura de las tarjetas. -->
+                    <article
+                        class="flex h-full flex-col rounded-2xl border-2 border-gris-medellin/20 bg-white p-6 text-azul-noche shadow-md dark:border-white/20 dark:bg-azul-noche dark:text-white">
+                        <!-- flex-col/h-full comparten estructura; borde, relleno y radio siguen el kit. -->
+                        <h3 class="font-titulos text-2xl font-bold">Individual</h3>
+                        <!-- El nombre del plan usa la fuente de títulos. -->
+                        <p class="mt-3 font-titulos text-3xl font-bold text-verde-ruta dark:text-hoja-suave">$55.000
+                            <span class="font-texto text-base font-semibold">por persona</span>
+                        </p>
+                        <!-- El precio resalta en verde claro y usa Hoja Suave en modo oscuro. -->
+                        <ul class="mt-6 flex flex-1 flex-col gap-3">
+                            <!-- flex-1 iguala espacios; gap-3 da separación regular a los beneficios. -->
+                            <li>Bicicleta y casco</li>
+                            <li>Luces LED y chaleco reflectivo</li>
+                            <li>Guía certificado</li>
+                            <li>Hidratación</li>
+                            <!-- El texto enumera los servicios incluidos en el plan individual. -->
+                        </ul>
+                        <a href="#inscripcion" class="btn-outline mt-6">Elegir Individual</a>
+                        <!-- El botón queda al final gracias al espacio flexible de la lista. -->
+                    </article>
+                    <article
+                        class="flex h-full flex-col rounded-2xl border-4 border-verde-ruta bg-hoja-suave p-6 text-azul-noche shadow-lg dark:border-amarillo-farol dark:bg-azul-noche dark:text-white">
+                        <!-- El borde grueso y el fondo identifican el plan destacado sin desplazar la card. -->
+                        <span
+                            class="mb-4 self-start rounded-full bg-verde-ruta px-4 py-2 text-sm font-bold text-white dark:bg-amarillo-farol dark:text-azul-noche">Más
+                            elegido</span>
+                        <!-- La etiqueta textual no depende únicamente del color para indicar popularidad. -->
+                        <h3 class="font-titulos text-2xl font-bold">Pareja</h3>
+                        <p class="mt-3 font-titulos text-3xl font-bold text-verde-ruta dark:text-hoja-suave">$99.000
+                            <span class="font-texto text-base font-semibold">las dos personas</span>
+                        </p>
+                        <!-- Se muestra el precio total para las dos personas. -->
+                        <ul class="mt-6 flex flex-1 flex-col gap-3">
+                            <!-- La lista conserva la misma distribución y separación que las otras cards. -->
+                            <li>Todo lo del plan Individual</li>
+                            <li>Foto del recorrido</li>
+                            <li>Snack para dos</li>
+                            <li>Prioridad en la ruta</li>
+                            <!-- Beneficios adicionales del plan Pareja. -->
+                        </ul>
+                        <a href="#inscripcion" class="btn-primary mt-6">Elegir Pareja</a>
+                        <!-- El botón principal enfatiza el plan destacado y queda alineado abajo. -->
+                    </article>
+                    <article
+                        class="flex h-full flex-col rounded-2xl border-2 border-gris-medellin/20 bg-white p-6 text-azul-noche shadow-md dark:border-white/20 dark:bg-azul-noche dark:text-white">
+                        <!-- La misma estructura y relleno conservan la consistencia entre tarjetas. -->
+                        <h3 class="font-titulos text-2xl font-bold">Grupo <span class="text-base font-semibold">(4 a
+                                8)</span></h3>
+                        <p class="mt-3 font-titulos text-3xl font-bold text-verde-ruta dark:text-hoja-suave">$45.000
+                            <span class="font-texto text-base font-semibold">por persona</span>
+                        </p>
+                        <!-- El valor corresponde a cada integrante del grupo. -->
+                        <ul class="mt-6 flex flex-1 flex-col gap-3">
+                            <!-- flex-1 y gap-3 mantienen el botón en la misma línea inferior. -->
+                            <li>Todo lo del plan Individual</li>
+                            <li>Guía exclusivo</li>
+                            <li>Horario a elección</li>
+                            <li>Fotos del grupo</li>
+                            <!-- Beneficios adicionales para grupos de cuatro a ocho personas. -->
+                        </ul>
+                        <a href="#inscripcion" class="btn-outline mt-6">Elegir Grupo</a>
+                        <!-- Lleva a la misma inscripción de la campaña. -->
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="bg-hoja-suave py-12 dark:bg-azul-noche">
+            <!-- Fondo de la sección cambia según el sistema; el id conecta con el menú. -->
+            <div class="mx-auto max-w-6xl px-6">
+                <!-- Usa el mismo ancho y el mismo relleno lateral que el hero y las rutas. -->
+                <div class="mb-8 max-w-2xl">
+                    <p class="text-sm font-bold uppercase tracking-[0.16em] text-verde-ruta dark:text-amarillo-farol">Tu
+                        noche en cuatro pasos</p>
+                    <!-- Verde en fondo claro y amarillo sobre Azul Noche conservan el contraste. -->
+                    <h2 class="mt-2 font-titulos text-3xl font-bold sm:text-4xl">¿Cómo funciona?</h2>
+                    <!-- Título de sección con el mismo tamaño responsive que el encabezado de rutas. -->
+                </div>
+                <ol class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <!-- Elegí grid porque los cuatro pasos tienen el mismo peso; se reorganizan en 1, 2 y 4 columnas por breakpoint. -->
+                    <li
+                        class="rounded-2xl border border-gris-medellin/20 bg-white p-5 text-azul-noche dark:border-white/20 dark:bg-azul-noche dark:text-white">
+                        <!-- rounded-2xl y p-5 mantienen radios y escala de espacio del kit; superficie se adapta a dark. -->
+                        <span class="font-titulos text-2xl font-bold text-verde-ruta dark:text-amarillo-farol">01</span>
+                        <!-- Número visible en marca; amarillo sobre fondo oscuro evita el verde de bajo contraste. -->
+                        <h3 class="mt-3 font-titulos text-lg font-bold">Elige tu ruta</h3>
+                        <p class="mt-2 leading-relaxed text-gris-medellin dark:text-hoja-suave">Escoge la distancia y el
+                            nivel que quieras recorrer.</p>
+                    </li>
+                    <li
+                        class="rounded-2xl border border-gris-medellin/20 bg-white p-5 text-azul-noche dark:border-white/20 dark:bg-azul-noche dark:text-white">
+                        <span class="font-titulos text-2xl font-bold text-verde-ruta dark:text-amarillo-farol">02</span>
+                        <h3 class="mt-3 font-titulos text-lg font-bold">Reserva tu cupo</h3>
+                        <p class="mt-2 leading-relaxed text-gris-medellin dark:text-hoja-suave">Completa tus datos y
+                            confirma la salida.</p>
+                    </li>
+                    <li
+                        class="rounded-2xl border border-gris-medellin/20 bg-white p-5 text-azul-noche dark:border-white/20 dark:bg-azul-noche dark:text-white">
+                        <span class="font-titulos text-2xl font-bold text-verde-ruta dark:text-amarillo-farol">03</span>
+                        <h3 class="mt-3 font-titulos text-lg font-bold">Llega a la sede</h3>
+                        <p class="mt-2 leading-relaxed text-gris-medellin dark:text-hoja-suave">Encuéntrate con la guía
+                            y revisa tu equipo.</p>
+                    </li>
+                    <li
+                        class="rounded-2xl border border-gris-medellin/20 bg-white p-5 text-azul-noche dark:border-white/20 dark:bg-azul-noche dark:text-white">
+                        <span class="font-titulos text-2xl font-bold text-verde-ruta dark:text-amarillo-farol">04</span>
+                        <h3 class="mt-3 font-titulos text-lg font-bold">Pedalea y disfruta</h3>
+                        <p class="mt-2 leading-relaxed text-gris-medellin dark:text-hoja-suave">Explora Medellín
+                            iluminada con tu grupo.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="inscripcion" class="py-12 sm:py-16 lg:py-20">
+            <!-- Sección conectada desde los botones de inscripción y los planes de la campaña. -->
+            <div class="mx-auto max-w-6xl px-6">
+                <!-- Conserva max-w-6xl y px-6 para alinear con el resto de secciones. -->
+                <div class="mb-8 max-w-3xl">
+                    <p class="text-sm font-bold uppercase tracking-[0.16em] text-verde-ruta dark:text-amarillo-farol">
+                        Cupos limitados · Jueves a sábado</p>
+                    <!-- Verde en fondo claro y amarillo en oscuro conservan contraste. -->
+                    <h2 class="mt-2 font-titulos text-3xl font-bold sm:text-4xl">Inscríbete a Rueda Nocturna</h2>
+                    <!-- Título directo para que el objetivo del formulario sea evidente. -->
+                    <p class="mt-3 leading-relaxed text-gris-medellin dark:text-hoja-suave">Completa todos los datos. Al
+                        enviar, se abrirá un mensaje para soporte@ruedalibre.com; confirma el envío desde tu aplicación
+                        de correo.</p>
+                    <!-- Se informa que la página usa correo y no afirma tener un servidor de reservas. -->
+                </div>
+                <form
+                    class="space-y-6 rounded-2xl border border-gris-medellin/20 bg-white p-5 shadow-md sm:p-7 dark:border-white/20 dark:bg-azul-noche"
+                    action="mailto:soporte@ruedalibre.com" method="post" enctype="text/plain">
+                    <!-- space-y-6 separa los grupos; superficie y borde respetan el tema claro u oscuro. -->
+                    <fieldset class="rounded-xl border border-gris-medellin/30 p-5 dark:border-white/30">
+                        <!-- fieldset agrupa controles relacionados y p-5 crea relleno interno. -->
+                        <legend class="px-2 font-titulos text-xl font-bold">Tus datos de contacto</legend>
+                        <!-- legend nombra el conjunto de campos para la persona y el lector de pantalla. -->
+                        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+                            <!-- Los campos cortos pasan de una columna a dos desde md. -->
+                            <div class="space-y-2">
+                                <label for="nombre-inscripcion" class="block font-semibold">Nombre completo</label>
+                                <!-- for enlaza la etiqueta con el input por medio del id. -->
+                                <input id="nombre-inscripcion" name="nombre_completo" type="text" autocomplete="name"
+                                    minlength="3" pattern=".{3,}" title="Escribe al menos 3 caracteres." required
+                                    class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:focus-visible:ring-amarillo-farol">
+                                <!-- minlength y pattern exigen tres caracteres; title explica la regla y required evita dejarlo vacío. -->
+                            </div>
+                            <div class="space-y-2">
+                                <label for="correo-inscripcion" class="block font-semibold">Correo electrónico</label>
+                                <!-- La etiqueta describe el dato solicitado. -->
+                                <input id="correo-inscripcion" name="correo" type="email" autocomplete="email" required
+                                    class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:focus-visible:ring-amarillo-farol">
+                                <!-- type=email revisa el formato; required exige que se complete. -->
+                            </div>
+                            <div class="space-y-2">
+                                <label for="celular-inscripcion" class="block font-semibold">Celular</label>
+                                <!-- La etiqueta queda conectada por el id del campo. -->
+                                <input id="celular-inscripcion" name="celular" type="tel" autocomplete="tel"
+                                    inputmode="numeric" pattern="3[0-9]{9}"
+                                    title="Escribe 10 dígitos: debe empezar por 3 y continuar con 9 números." required
+                                    class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:focus-visible:ring-amarillo-farol">
+                                <!-- pattern exige diez dígitos que empiezan por 3; title explica la regla. -->
+                            </div>
+                            <div class="space-y-2">
+                                <label for="ruta-inscripcion" class="block font-semibold">Ruta elegida</label>
+                                <!-- select es adecuado porque solo se elige una de tres rutas. -->
+                                <select id="ruta-inscripcion" name="ruta" required
+                                    class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:focus-visible:ring-amarillo-farol">
+                                    <!-- La opción vacía obliga a escoger una ruta disponible. -->
+                                    <option value="" selected disabled>Selecciona una ruta</option>
+                                    <option value="Luces del Centro">Luces del Centro</option>
+                                    <option value="Miradores de la Ciudad">Miradores de la Ciudad</option>
+                                    <option value="Luna en Las Palmas">Luna en Las Palmas</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="dia-inscripcion" class="block font-semibold">Día de salida</label>
+                                <!-- El select permite elegir entre los tres días de operación. -->
+                                <select id="dia-inscripcion" name="dia_salida" required
+                                    class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:focus-visible:ring-amarillo-farol">
+                                    <!-- No hay una fecha precargada; debe seleccionarse una opción válida. -->
+                                    <option value="" selected disabled>Selecciona un día</option>
+                                    <option value="Jueves">Jueves</option>
+                                    <option value="Viernes">Viernes</option>
+                                    <option value="Sábado">Sábado</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="acompanantes" class="block font-semibold">Número de acompañantes</label>
+                                <!-- type number permite modificar el valor con teclado y controles nativos. -->
+                                <input id="acompanantes" name="acompanantes" type="number" min="0" max="3" value="0"
+                                    required
+                                    class="w-full rounded-xl border border-gris-medellin bg-white px-4 py-3 text-azul-noche focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:border-white/40 dark:bg-azul-noche dark:text-white dark:focus-visible:ring-amarillo-farol">
+                                <!-- min/max restringen los acompañantes al rango solicitado de cero a tres. -->
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="rounded-xl border border-gris-medellin/30 p-5 dark:border-white/30">
+                        <!-- El segundo fieldset reúne experiencia y disponibilidad de bicicleta. -->
+                        <legend class="px-2 font-titulos text-xl font-bold">Detalles de tu salida</legend>
+                        <!-- legend identifica el tema de las opciones siguientes. -->
+                        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                            <!-- En escritorio las preguntas comparten dos columnas; en móvil se apilan. -->
+                            <fieldset class="space-y-3">
+                                <legend class="font-semibold">Nivel de experiencia</legend>
+                                <!-- Las opciones de radio representan una sola respuesta del grupo. -->
+                                <label class="flex items-center gap-3"><input type="radio" name="experiencia"
+                                        value="Principiante" required
+                                        class="accent-verde-ruta focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Principiante</label>
+                                <label class="flex items-center gap-3"><input type="radio" name="experiencia"
+                                        value="Intermedio" required
+                                        class="accent-verde-ruta focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Intermedio</label>
+                                <label class="flex items-center gap-3"><input type="radio" name="experiencia"
+                                        value="Avanzado" required
+                                        class="accent-verde-ruta focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Avanzado</label>
+                                <!-- required obliga a elegir un nivel y los controles admiten navegación por teclado. -->
+                            </fieldset>
+                            <fieldset class="space-y-3">
+                                <legend class="font-semibold">¿Tienes bicicleta propia?</legend>
+                                <!-- El grupo de radio permite responder sí o no. -->
+                                <label class="flex items-center gap-3"><input type="radio" name="bicicleta_propia"
+                                        value="Sí" required
+                                        class="accent-verde-ruta focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Sí</label>
+                                <label class="flex items-center gap-3"><input type="radio" name="bicicleta_propia"
+                                        value="No" required
+                                        class="accent-verde-ruta focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">No</label>
+                                <!-- Ambos controles comparten name para que sean mutuamente excluyentes. -->
+                            </fieldset>
+                        </div>
+                    </fieldset>
+                    <div class="space-y-5">
+                        <!-- El consentimiento y el botón quedan separados de los fieldsets. -->
+                        <label for="condiciones" class="flex items-start gap-3 leading-relaxed">
+                            <!-- La etiqueta completa es clicable y se vincula por el atributo for. -->
+                            <input id="condiciones" name="acepta_condiciones" type="checkbox" value="Sí" required
+                                class="mt-1 accent-verde-ruta focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">
+                            <!-- required impide continuar sin aceptar las condiciones. -->
+                            <span>Acepto las condiciones de la rodada y el uso de mis datos para gestionar esta
+                                solicitud.</span>
+                            <!-- El propósito del consentimiento se expresa en el propio texto. -->
+                        </label>
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+                            <!-- El botón se apila en móvil y comparte la línea con la nota desde sm. -->
+                            <button type="submit" class="btn-primary self-start">Enviar inscripción</button>
+                            <!-- El navegador aplica required, minlength, pattern, min y max antes de enviar. -->
+                            <p class="text-sm leading-relaxed text-gris-medellin dark:text-hoja-suave">Se abrirá tu
+                                correo para revisar y enviar la solicitud.</p>
+                            <!-- La nota aclara que el envío final se completa desde el correo del usuario. -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gris-medellin/20 bg-hoja-suave py-8 dark:border-white/20 dark:bg-azul-noche">
+        <!-- El pie usa tres bloques flex; fondo y borde cambian de forma coherente con el modo oscuro. -->
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between">
+            <!-- Mismo contenedor que secciones; flex-col apila en móvil y md:flex-row distribuye los tres bloques. -->
+            <div>
+                <a href="../index.html" class="font-titulos font-bold text-azul-noche underline dark:text-white">Rueda
+                    Libre</a>
+                <!-- Enlace al sitio principal para mantener la navegación entre productos. -->
+                <p class="mt-1 text-sm text-gris-medellin dark:text-hoja-suave">Pedalea Medellín bajo las estrellas.</p>
+            </div>
+            <div>
+                <p class="font-semibold">Contacto</p>
+                <a href="mailto:soporte@ruedalibre.com"
+                    class="text-sm text-verde-ruta underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:text-hoja-suave">soporte@ruedalibre.com</a>
+            </div>
+            <div class="flex gap-4 text-sm font-semibold">
+                <a href="#rutas"
+                    class="text-verde-ruta underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:text-hoja-suave">Rutas</a>
+                <a href="#planes"
+                    class="text-verde-ruta underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:text-hoja-suave">Planes</a>
+                <a href="#como-funciona"
+                    class="text-verde-ruta underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:text-hoja-suave">Pasos</a>
+                <a href="#inicio"
+                    class="text-verde-ruta underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol dark:text-hoja-suave">Inicio</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

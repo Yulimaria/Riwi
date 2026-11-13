@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuliana.dev</title>
+<!--  -->
+    <!-- Conectamos Tailwind CSS para utilizar sus clases de estilos -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <!-- Conectamos nuestra hoja de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<nav
+    class="sticky top-0 z-20 flex flex-wrap items-center justify-star gap-4 px-3 py-2 bg-[#052F27] text-white text-2xl ">
+    <!--aca estoy dando indicaciones a la barra de navegacion para que quede fija en la parte superior de la pantalla y tenga un fondo verde oscuro con texto blanco y espaciado entre los elementos -->
+
+    <a href="about.html" class="hover:text-emerald-300 ">About me</a>
+    <a href="#skills" class="hover:text-emerald-300">Skills</a>
+    <a href="projects.html" class="hover:text-emerald-300">Projects</a>
+    <a href="contact.html" class="hover:text-emerald-300">Contact</a>
+</nav>
+
+<body class="bg-[#052F27] text-white">
+
+    <!-- ================================= -->
+    <!-- SECCIÓN INICIO / PRESENTACIÓN -->
+    <!-- ================================= -->
+
+    <section id="Inicio" class="flex flex-col items-center text-center px-6 py-10">
+
+        <!-- Foto de perfil -->
+        <img src="img/Mem.png" alt="Mi foto" width="200" height="200" class="w-48 mb-6 mt-6 rounded-3xl">
+
+        <!-- Nombre -->
+        <h1 class="text-3xl font-bold text-slate-50 text-center">
+            Yuliana María Pérez López
+        </h1>
+
+        <!-- Frase principal -->
+        <p class="text-center font-semibold text-emerald-300"> <span class="text-amber-400">✦ ✨ ✦</span>
+            Turning Ideas into Code
+            <span class="text-amber-400">✦ ✨ ✦</span>
+        </p>
+
+        <!-- Descripción personal -->
+        <p class="text-emerald-300 text-center mt-2 px-4 max-w-xl italic">
+            Curious by nature, creative by choice and learning to code with passion.
+        </p>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- SECCIÓN HABILIDADES / SKILLS -->
+    <!-- ================================= -->
+
+    <section id="skills" class="mt-12 px-4 pb-16">
+        <!--clase mt-12 agrega un margen superior, px-4 agrega un padding horizontal y pb-16 agrega un padding inferior a la sección de habilidades -->
+        <!-- Título de la sección -->
+        <h2 class="text-3xl font-bold text-center mb-8 text-emerald-300">
+            Skills:
+        </h2>
+
+        <!-- Contenedor de todas las tarjetas.
+             Distribuye las tarjetas y permite que se adapten
+             a diferentes tamaños de pantalla. -->
+        <div class="flex flex-wrap justify-evenly gap-4 px-4">
+
+
+            <!-- ================================= -->
+            <!-- TARJETA HTML -->
+            <!-- ================================= -->
+
+            <div class="flip-card"> <!-- Tarjeta HTML -->
+
+                <div class="flip-card-inner">
+
+                    <!-- Cara frontal de la tarjeta -->
+                    <div class="flip-card-front">
+                        HTML
+                    </div>
+
+                    <!-- Cara posterior de la tarjeta -->
+                    <div class="flip-card-back">
+                        <h3><strong>HTML</strong></h3>
+                        <p>Structure with HTML</p>
+                        <p>Building web page structures.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- TARJETA CSS -->
+            <!-- ================================= -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <!-- Cara frontal -->
+                    <div class="flip-card-front">
+                        CSS
+                    </div>
+
+                    <!-- Cara posterior -->
+                    <div class="flip-card-back">
+                        <h3><strong>CSS</strong></h3>
+                        <p>Styling with CSS</p>
+                        <p>Creating beautiful and responsive designs.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- TARJETA GIT Y GITHUB -->
+            <!-- ================================= -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <!-- Cara frontal -->
+                    <div class="flip-card-front">
+                        Git & GitHub
+                    </div>
+
+                    <!-- Cara posterior -->
+                    <div class="flip-card-back">
+                        <h3><strong>Git & GitHub</strong></h3>
+                        <p>Version control</p>
+                        <p>Managing and sharing code projects.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- TARJETA TAILWIND -->
+            <!-- ================================= -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <!-- Cara frontal -->
+                    <div class="flip-card-front">
+                        Tailwind
+                    </div>
+
+                    <!-- Cara posterior -->
+                    <div class="flip-card-back">
+                        <h3><strong>Tailwind CSS</strong></h3>
+                        <p>Utility-first CSS framework</p>
+                        <p>Building interfaces with utility classes.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- TARJETA JAVASCRIPT -->
+            <!-- ================================= -->
+
+            <div class="flip-card">
+
+                <div class="flip-card-inner">
+
+                    <!-- Cara frontal -->
+                    <div class="flip-card-front">
+                        JavaScript
+                    </div>
+
+                    <!-- Cara posterior -->
+                    <div class="flip-card-back">
+                        <h3><strong>JavaScript</strong></h3>
+                        <p>Programming logic</p>
+                        <p>Adding interaction to web pages.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- JAVASCRIPT: INTERACCIÓN DE TARJETAS -->
+    <!-- ================================= -->
+
+    <script>
+
+        // Busca todas las tarjetas que tengan la clase flip-card
+        const tarjetas = document.querySelectorAll(".flip-card");
+
+        // Recorre cada tarjeta para agregarle un evento
+        tarjetas.forEach((tarjeta) => {
+
+            // Espera a que el usuario haga clic sobre una tarjeta
+            tarjeta.addEventListener("click", () => {
+
+                // Agrega o quita la clase "girada"
+                // Si no existe, la agrega; si existe, la elimina
+                tarjeta.classList.toggle("girada");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+
+<!-- ================================= -->
+<!-- PIE DE PÁGINA / FOOTER -->
+<!-- ================================= -->
+
+<footer class="bg-[#0B4035] py-6 px-6">
+
+    <p class="text-center">
+        © 2026 Yuliana.dev | All rights reserved.
+    </p>
+
+</footer>
+
+</html>

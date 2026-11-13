@@ -1,0 +1,11 @@
+**/node_modules/
+**/tmp-edge-profile/
+.DS_Store
+Thumbs.db
+/azul-gasconia/
+/Azul-boostrap/
+/estudio/
+/package.json
+/package-lock.json
+/Rueda-libre/img/capturas/debug.png
+/Rueda-libre/img/capturas/rueda-nocturna-hojas-ajustadas.png
